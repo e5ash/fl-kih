@@ -7,13 +7,30 @@
   text-align: center;
   cursor: pointer;
   font-size: 16px;
-  font-family: "Tahoma", sans-serif;
+  font-family: "Inter", sans-serif;
   overflow: hidden;
   border: none;
   background-color: transparent;
   transition: 0.3s;
   outline: none;
   border-bottom: none;
+}
+.button:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  left: 0;
+  transition: 0.3s;
+}
+.button.--bg-blue {
+  color: #fff;
+  background-color: #1E468A;
+}
+.button.--bg-blue:after {
+  background-color: #fff;
+}
+.button.--bg-blue:hover {
+  background-color: #153160;
 }
 .button.--b-gray {
   border: 1px solid #eee;
@@ -28,10 +45,25 @@
   min-height: 40px;
 }
 .button.--md {
-  font-size: 16px;
-  min-height: 46px;
+  font-size: 12px;
+  font-weight: 500;
+  min-height: 60px;
+  padding: 0 32px;
+  text-transform: uppercase;
+}
+.button.--md:after {
+  left: 16px;
+  right: 16px;
+  bottom: 10px;
 }
 .button.--lg {
-  font-size: 20px;
-  min-height: 60px;
+  font-size: 16px;
+  font-weight: 500;
+  min-height: 80px;
+  padding: 0 40px;
+}
+.button.--lg:after {
+  left: 16px;
+  right: 16px;
+  bottom: 8px;
 }

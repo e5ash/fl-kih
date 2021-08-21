@@ -1,0 +1,14 @@
+include ../../pug/vars
+
+.advantages
+	.case
+		.advantages__title.h2 Выгоды #[br]использования
+		.advantages__list
+			mixin advantagesList(advantages)
+				each item in advantages 
+					.advantages__item
+						.advantages__icon
+							picture
+								img(src=item[1] alt="")
+						.advantages__name!=item[0]
+			+advantagesList(advantages)

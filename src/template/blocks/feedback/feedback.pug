@@ -1,0 +1,24 @@
+include ../../pug/vars
+
+.feedback
+	.case
+		.feedback__title.h2 Связаться с нами
+		.feedback__form.row
+			.feedback__field.field.--md.--b-black
+				.field__wrap
+					input.field__area(type="text" name="name")
+					.field__placeholder Ваше имя
+			.feedback__field.field.--md.--b-black
+				.field__wrap
+					input.field__area(type="tel" name="phone")
+					.field__placeholder Телефон
+			.feedback__field.field.--md.--b-black
+				.field__wrap
+					textarea.field__area(name="comment")
+					.field__placeholder Комментарий
+			.feedback__foot.row
+				.feedback__check.check.--md.--b-black
+					input.check__input(type="checkbox" name="policy")
+					.check__box
+					.check__wrap Я выражаю свое согласие с #[a(href="" target="_blank") Политикой конфиденциальности] и разрешаю обработку своих персональных данных
+				button.feedback__btn-send.button.--md.--bg-blue Отправить

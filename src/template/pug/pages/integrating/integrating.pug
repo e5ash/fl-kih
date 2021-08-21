@@ -1,0 +1,28 @@
+extends ../../templates/default
+block vars
+	-
+		title = ""
+		breadcrumbs = [
+			['Главная', 'index.html'],
+			[title]
+		]
+block content
+	.intro.section.lines.bgw
+		.case
+			.intro__content.--pl
+				.intro__title.h1 Опыт внедрений
+				.intro__btns.row
+					a.intro__button.button.--md.--bg-white(href="") Обсудить проект
+			.intro__scroll.scroll
+				.scroll__box
+				.scroll__title Скрольте #[br]вниз
+			.intro__pluses.pluses
+		.intro__bg.bg
+			picture
+				img(src="upload/integrating.jpg" alt="")
+
+	include ../../../blocks/doc/doc
+	+style('doc', 'blocks')
+
+	include ../../../blocks/partners/partners
+	+style('partners', 'blocks')

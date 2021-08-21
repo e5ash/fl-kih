@@ -1,0 +1,15 @@
+<svg width="123" height="123" viewBox="0 0 123 123" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="29.5" y="1.5" width="76" height="107" stroke="#2473FB" stroke-width="3"/>
+<path d="M16.5 13.5H74.3787L93.5 32.6213V121.5H16.5V13.5Z" fill="white" stroke="#2473FB" stroke-width="3"/>
+<line x1="28" y1="29.5" x2="52" y2="29.5" stroke="#2473FB" stroke-width="3"/>
+<line x1="28" y1="37.5" x2="52" y2="37.5" stroke="#2473FB" stroke-width="3"/>
+<line x1="28" y1="48.5" x2="82" y2="48.5" stroke="#2473FB" stroke-width="3"/>
+<line x1="28" y1="56.5" x2="82" y2="56.5" stroke="#2473FB" stroke-width="3"/>
+<line x1="28" y1="64.5" x2="82" y2="64.5" stroke="#2473FB" stroke-width="3"/>
+<line x1="28" y1="72.5" x2="42" y2="72.5" stroke="#2473FB" stroke-width="3"/>
+<circle cx="59" cy="97" r="15.5" fill="white" stroke="#2473FB" stroke-width="3"/>
+<line x1="120.5" y1="96.5" x2="117.5" y2="96.5" stroke="#2473FB" stroke-width="3" stroke-linecap="round"/>
+<path d="M74.4336 97.629C75.0404 96.3151 75.8943 95.2658 76.8778 94.5561C77.8568 93.8495 78.9328 93.5 80 93.5C81.0672 93.5 82.1432 93.8495 83.1222 94.5561C84.1057 95.2658 84.9596 96.3151 85.5664 97.629" stroke="#2473FB" stroke-width="3"/>
+<circle cx="101" cy="97" r="15.5" fill="white" stroke="#2473FB" stroke-width="3"/>
+<line x1="42.5" y1="96.5" x2="39.5" y2="96.5" stroke="#2473FB" stroke-width="3" stroke-linecap="round"/>
+</svg>

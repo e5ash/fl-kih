@@ -1,0 +1,17 @@
+include ../../pug/vars
+
+.solution
+	.case
+		.solution__wrap
+			if (solutionTitle)
+				.solution__title!=solutionTitle
+			if (solutionText)
+				.solution__title!=solutionText
+			if solutionReestr
+				.solution__reestr.reestr
+					.reestr__logo
+						pictrure
+							img(src="uplods/rf.png" alt="")
+					.reestr__content
+						.reestr__text Система включена в единый реестр российских программ для электронных вычислительных машин и баз данных (Приказ Минкомсвязи России от 18.09.2018 №475) и не требует закупки лицензий на дополнительное зарубежное программное обеспечение.
+						.reestr__link #[a(href="") Получить консультацию]

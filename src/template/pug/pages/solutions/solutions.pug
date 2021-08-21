@@ -1,0 +1,21 @@
+extends ../../templates/default
+block vars
+	-
+		title = ""
+		breadcrumbs = [
+			['Главная', 'index.html'],
+			[title]
+		]
+block content
+	.intro.section.lines.lines_md.bg-blue
+		.case
+			.intro__content
+				.intro__title.h1 Наши решения для бизнеса и государства
+				.intro__btns.row
+					a.intro__button.button.--md.--bg-white(href="") Обсудить проект
+			.intro__scroll.scroll
+				.scroll__box
+				.scroll__title Скрольте #[br]вниз
+	
+	include ../../../blocks/solus/solus
+	+style('solus', 'blocks')

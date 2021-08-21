@@ -6,3 +6,59 @@ include ../../blocks/header/header
 +style('footer', 'blocks')
 include ../../blocks/footer/footer
 
+//- solutions 
++style('solutions', 'blocks')
+include ../../blocks/solutions/solutions
+
+//- philosophy 
++style('philosophy', 'blocks')
+include ../../blocks/philosophy/philosophy
+
+//- mission 
++style('mission', 'blocks')
+include ../../blocks/mission/mission
+
+//- timeline 
++style('timeline', 'blocks')
+include ../../blocks/timeline/timeline
+
+//- certificates 
++style('certificates', 'blocks')
+include ../../blocks/certificates/certificates
+
+//- solus 
++style('solus', 'blocks')
+include ../../blocks/solus/solus
+
+//- doc 
++style('doc', 'blocks')
+include ../../blocks/doc/doc
+
+//- partners 
++style('partners', 'blocks')
+include ../../blocks/partners/partners
+
+//- advantages 
++style('advantages', 'blocks')
+include ../../blocks/advantages/advantages
+
+//- solution 
++style('solution', 'blocks')
+include ../../blocks/solution/solution
+
+//- whom 
++style('whom', 'blocks')
+include ../../blocks/whom/whom
+
+//- reviews 
++style('reviews', 'blocks')
+include ../../blocks/reviews/reviews
+
+//- feedback 
++style('feedback', 'blocks')
+include ../../blocks/feedback/feedback
+
+//- faq 
++style('faq', 'blocks')
+include ../../blocks/faq/faq
+

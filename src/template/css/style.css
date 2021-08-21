@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap");
 *, :before, :after {
   padding: 0;
   margin: 0;
@@ -12,7 +13,7 @@ html, body {
 body {
   color: #000000;
   font-size: 16px;
-  font-family: "Tahoma", sans-serif;
+  font-family: "Inter", sans-serif;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -94,7 +95,7 @@ img, svg, path, circle, rect, line {
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
-  max-width: 1170px;
+  max-width: 1470px;
 }
 .case .case {
   padding-left: 0;
@@ -137,13 +138,30 @@ img, svg, path, circle, rect, line {
   text-align: center;
   cursor: pointer;
   font-size: 16px;
-  font-family: "Tahoma", sans-serif;
+  font-family: "Inter", sans-serif;
   overflow: hidden;
   border: none;
   background-color: transparent;
   transition: 0.3s;
   outline: none;
   border-bottom: none;
+}
+.button:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  left: 0;
+  transition: 0.3s;
+}
+.button.--bg-blue {
+  color: #fff;
+  background-color: #1E468A;
+}
+.button.--bg-blue:after {
+  background-color: #fff;
+}
+.button.--bg-blue:hover {
+  background-color: #153160;
 }
 .button.--b-gray {
   border: 1px solid #eee;
@@ -158,12 +176,27 @@ img, svg, path, circle, rect, line {
   min-height: 40px;
 }
 .button.--md {
-  font-size: 16px;
-  min-height: 46px;
+  font-size: 12px;
+  font-weight: 500;
+  min-height: 60px;
+  padding: 0 32px;
+  text-transform: uppercase;
+}
+.button.--md:after {
+  left: 16px;
+  right: 16px;
+  bottom: 10px;
 }
 .button.--lg {
-  font-size: 20px;
-  min-height: 60px;
+  font-size: 16px;
+  font-weight: 500;
+  min-height: 80px;
+  padding: 0 40px;
+}
+.button.--lg:after {
+  left: 16px;
+  right: 16px;
+  bottom: 8px;
 }
 
 .field__wrap {
@@ -173,7 +206,7 @@ img, svg, path, circle, rect, line {
 .field__area {
   display: block;
   font-size: 16px;
-  font-family: "Tahoma", sans-serif;
+  font-family: "Inter", sans-serif;
   width: 100%;
   overflow: hidden;
   resize: none;
@@ -500,6 +533,177 @@ body.popup-show {
   text-align: right;
 }
 
+.h1 {
+  font-size: 88px;
+  line-height: 94px;
+  font-weight: 700;
+}
+
 .overflow-disable {
+  overflow: hidden;
+}
+
+.bgw {
+  z-index: 1;
+  position: relative;
+}
+
+.bg {
+  z-index: -100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.bg picture, .bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.3s;
+}
+.header.--fixed {
+  background-color: #fff;
+}
+.header__wrap {
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.header__logo {
+  border-bottom: none;
+  margin-right: 125px;
+}
+.header__nav {
+  margin-right: auto;
+}
+.header__phone {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 700;
+  margin-right: 32px;
+}
+.header__phone a {
+  color: #fff;
+}
+.header__btn-consult {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+}
+.header__btn-consult:hover {
+  color: #fff;
+}
+
+.nav__list {
+  margin-left: -16px;
+  margin-right: -16px;
+}
+.nav__item {
+  color: #fff;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  margin-left: 16px;
+  margin-right: 16px;
+  text-transform: uppercase;
+}
+
+.section {
+  height: 100vh;
+}
+
+.intro {
+  color: #fff;
+}
+.intro .case {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  padding-bottom: 120px;
+  opacity: 0;
+}
+.intro__content {
+  width: 100%;
+  max-width: 960px;
+}
+.intro__btns {
+  margin-top: 64px;
+}
+.intro__scroll {
+  position: absolute;
+  right: 115px;
+  bottom: 120px;
+}
+.scroll {
+  display: flex;
+  align-items: center;
+}
+.scroll__box {
+  z-index: 1;
+  position: relative;
+  width: 23px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 50px;
+}
+.scroll__box:before {
+  content: "";
+  opacity: 0.5;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 5px;
+  height: 18px;
+  margin-left: -2.5px;
+  border-radius: 50px;
+  background-color: #fff;
+}
+.scroll__box:after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  margin-left: -4.5px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: 2s scroll infinite;
+}
+.scroll__title {
+  font-size: 13px;
+  line-height: 13px;
+  font-weight: 500;
+  padding-left: 16px;
+  padding-bottom: 4px;
+}
+
+@keyframes scroll {
+  0% {
+    top: 8px;
+  }
+  70% {
+    top: 16px;
+  }
+  100% {
+    top: 8px;
+  }
+}
+.lines {
+  position: relative;
+  z-index: 1;
   overflow: hidden;
 }

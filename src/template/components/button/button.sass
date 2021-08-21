@@ -16,6 +16,22 @@
 	transition: .3s
 	outline: none
 	border-bottom: none
+	&:after
+		content: ''
+		position: absolute
+		height: 2px
+		left: 0
+		transition: $t
+	&.--bg-blue
+		color: #fff
+		background-color: $blue
+		&:after
+			background-color: #fff
+		&:hover
+			background-color: darken($blue, 10%)
+			&:after
+				// height: 40px
+				
 	&.--b-gray
 		border: 1px solid $c-lines
 		border-radius: $radius
@@ -26,8 +42,22 @@
 		font-size: 14px
 		min-height: 40px
 	&.--md
-		font-size: $fzMain
-		min-height: 46px
-	&.--lg
-		font-size: 20px
+		font-size: 12px
+		font-weight: 500
 		min-height: 60px
+		padding: 0 32px
+		text-transform: uppercase
+		&:after
+			left: 16px
+			right: 16px
+			bottom: 10px
+	&.--lg
+		font-size: $fzMain
+		font-weight: 500
+		min-height: 80px
+		padding: 0 40px
+		&:after
+			left: 16px
+			right: 16px
+			bottom: 8px
+
