@@ -39,12 +39,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
 	// 		}
 	// 	})
 	// }
+	
+	let sections = document.querySelectorAll('.section');
+	if (sections) {
+		new Sscroll(sections);
+	}
+
 
 	let lines = document.querySelectorAll('.lines');
 	if (lines) {
 		lines.forEach((el)=>{
-			new Lines(el);
+			// new Lines(el);
 		});
 	}
+
+
 
 });
