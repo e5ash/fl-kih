@@ -1,21 +1,24 @@
 extends ../../templates/default
 block vars
 	-
-		title = ""
+		title = "Наши решения"
 		breadcrumbs = [
 			['Главная', 'index.html'],
 			[title]
 		]
 block content
-	.intro.section.lines.lines_md.bg-blue
-		.case
-			.intro__content
-				.intro__title.h1 Наши решения для бизнеса и государства
-				.intro__btns.row
-					a.intro__button.button.--md.--bg-white(href="") Обсудить проект
-			.intro__scroll.scroll
-				.scroll__box
-				.scroll__title Скрольте #[br]вниз
+	.intro.section.lines.bg-blue#intro
+		.section__inner
+			.case
+				.intro__content
+					.intro__title.h1 #[span #[u #[i Наши решения для]] #[u #[i бизнеса и]] #[u #[i государства]]]
+					.intro__btns.row
+						a.intro__button.button.--lg.--bg-white(href="#modal-discuss" data-popup="") Обсудить проект
+				.intro__scroll.scroll
+					.scroll__box
+					.scroll__title Скрольте #[br]вниз
 	
 	include ../../../blocks/solus/solus
-	+style('solus', 'blocks')
+	
+
+	include ../../../blocks/footer/footer

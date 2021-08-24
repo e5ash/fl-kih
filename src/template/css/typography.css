@@ -15,3 +15,75 @@
   line-height: 94px;
   font-weight: 700;
 }
+.h1 u, .h1 i {
+  display: block;
+}
+.h1 u {
+  overflow: hidden;
+}
+.h1 i {
+  transition: transform 0.7s;
+  transition-delay: 1s;
+  transform: translateY(100%);
+}
+
+.h2 {
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 700;
+}
+.h2.--light {
+  font-weight: 300;
+}
+
+.h3 {
+  font-size: 32px;
+  line-height: 48px;
+  font-weight: 700;
+}
+.h3.--light {
+  font-weight: 300;
+}
+
+.h4 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+.h6 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.t1 {
+  font-size: 16px;
+  line-height: 24px;
+}
+.t1 ul {
+  flex-direction: column;
+}
+.t1 li {
+  margin-bottom: 24px;
+  padding-left: 31px;
+  position: relative;
+  color: rgba(26, 27, 31, 0.7);
+}
+.t1 li:last-of-type {
+  margin-bottom: 0;
+}
+.t1 li:before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #1E468A;
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+
+.upper {
+  text-transform: uppercase;
+}

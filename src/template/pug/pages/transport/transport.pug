@@ -1,74 +1,63 @@
 extends ../../templates/default
 block vars
 	-
-		title = ""
+		title = "Интеграция"
 		breadcrumbs = [
 			['Главная', 'index.html'],
 			[title]
 		]
 block content
-	.intro.section.lines.bg-green-l
-		.case
-			.intro__content
-				.intro__text Универсальная информационная система мониторинга транспорта
+	.intro.section.lines.bg-green-l#intro
+		.section__inner
+			.case
+				.intro__content
+					.intro__text Универсальная информационная система мониторинга транспорта
 
-				.intro__title.h1 Интеграция
-				.intro__btns.row
-					a.intro__button.button.--md.--bg-white(href="") Попробовать бесплатно
-					a.intro__button.button.--md.--bg-transparent(href="" target="_blank") Купить
+					.intro__title.h1 #[span #[u #[i Интеграция]]]
+					.intro__btns.row
+						a.intro__button.button.--lg.--bg-white(href="") Попробовать бесплатно
+						a.intro__button.button.--lg.--b-white(href="" target="_blank") Купить
 			.intro__icon
 				picture
-					img(src="upload/map.svg" alt="")
+					img(src="uploads/map.svg" alt="")
 
-	.sidenav
-		ul
-			li
-				a(href="#solution") Выгоды использования
-			li
-				a(href="#advanages") Как это работает
-			li
-				a(href="#how") Функциональные возможности
-			li
-				a(href="#reviews") Отзывы клиентов
-			li
-				a(href="#faq") Частые вопросы
+	.section.overflow-y.has-nav.solution-body#solution-body
+		.section__inner
+			.case
+				-
+					solutionTitle = 'Универсальная информационная система мониторинга транспорта «Интеграция» - современный высокотехнологичный программный комплекс для мониторинга и управления транспортными средствами, подвижными объектами и ресурсами.'
+					solutionText  = undefined
+					solutionReestr = true
 
-	-
-		solutionTitle = 'Универсальная информационная система мониторинга транспорта «Интеграция» - современный высокотехнологичный программный комплекс для мониторинга и управления транспортными средствами, подвижными объектами и ресурсами.'
-		solutionText  = undefined
-		solutionReestr = true
+				include ../../../blocks/solution/solution
 
-	include ../../../blocks/solution/solution
-	+style('solution', 'blocks')
+				-
+					advantages = [
+						['Контролируйте', 'web-car.svg'],
+						['Повышайте производительность', 'stats-up.svg'],
+						['Управляйте', 'equalizer.svg'],
+						['Создавайте удобства', 'app-handus.svg'],
+					]
+				include ../../../blocks/advantages/advantages
 
-	-
-		advantages = [
-			['Контролируйте', 'web-car.svg'],
-			['Повышайте производительность', 'stats-up.svg'],
-			['Управляйте', 'equalizer.svg'],
-			['Создавайте удобства', 'app-handus.svg'],
-		]
-	include ../../../blocks/advantages/advantages
-	+style('advantages', 'blocks')
-
-	-
-		whom = [
-			['Транспортные компании', 'truck.svg', '<ul><li>Планирование расписаний</li><li>Постановка на маршрут</li><li>Мониторинг движения транспортных средств</li><li>Фомирование аналитической отчетности</li><li>Тревожная кнопка</li></ul>'],
-			['Система мониторинга транспорта', 'comp-location.svg', '<ul><li>Прием и обработка данных с БНСО</li><li>Автоматизированный контроль нарушений работы ТС</li><li>Формирование отчетности</li><li>Управление электронными информационными табло</li><li>Интеграция с внешними ИС</li></ul>'],
-			['Органы исполнительной власти', 'callcenter-info.svg', '<ul><li>Создание единой электронной маршрутной сети и анализ ее работы</li><li>Оперативное реагирование при ЧС</li><li>Взаимодействие с органами государственного надзора</li><li>Контроль выхода ТС на маршрут</li><li>Автоматизация диспетчерской работы</li><li>Полная аналитика о выполнении транспортной работы</li><li>Обратная связь с пассажирами через мобильное приложение</li></ul>'],
-			['Пассажиры', 'group.svg', '<ul><li>Информирование о работе общественного транспорта посредством мобильного приложения и транспортного портала</li><li>Информирование о стоимости проезда</li><li>Информирование о длительности поездки</li><li>Возможность подачи обращения</li></ul>']
-		]
-	include ../../../blocks/whom/whom
-	+style('whom', 'blocks')
+				-
+					whom = [
+						['Транспортные компании', 'truck.svg', '<ul><li>Планирование расписаний</li><li>Постановка на маршрут</li><li>Мониторинг движения транспортных средств</li><li>Фомирование аналитической отчетности</li><li>Тревожная кнопка</li></ul>', true],
+						['Система мониторинга транспорта', 'comp-location.svg', '<ul><li>Прием и обработка данных с БНСО</li><li>Автоматизированный контроль нарушений работы ТС</li><li>Формирование отчетности</li><li>Управление электронными информационными табло</li><li>Интеграция с внешними ИС</li></ul>'],
+						['Органы исполнительной власти', 'callcenter-info.svg', '<ul><li>Создание единой электронной маршрутной сети и анализ ее работы</li><li>Оперативное реагирование при ЧС</li><li>Взаимодействие с органами государственного надзора</li><li>Контроль выхода ТС на маршрут</li><li>Автоматизация диспетчерской работы</li><li>Полная аналитика о выполнении транспортной работы</li><li>Обратная связь с пассажирами через мобильное приложение</li></ul>', true],
+						['Пассажиры', 'group.svg', '<ul><li>Информирование о работе общественного транспорта посредством мобильного приложения и транспортного портала</li><li>Информирование о стоимости проезда</li><li>Информирование о длительности поездки</li><li>Возможность подачи обращения</li></ul>']
+					]
+				include ../../../blocks/whom/whom
 
 	include ../../../blocks/philosophy/philosophy
-	+style('philosophy', 'blocks')
 
-	include ../../../blocks/reviews/reviews
-	+style('reviews', 'blocks')
+	.section.overflow-y.has-nav.solution-foot#solution-foot
+		.section__inner
+			.case
+				include ../../../blocks/reviews/reviews
+				
+				include ../../../blocks/faq/faq
 
-	include ../../../blocks/faq/faq
-	+style('faq', 'blocks')
-
-	include ../../../blocks/feedback/feedback
-	+style('feedback', 'blocks')
+				include ../../../blocks/feedback/feedback
+			
+	include ../../../blocks/footer/footer

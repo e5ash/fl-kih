@@ -1,18 +1,19 @@
 include ../../pug/vars
 
-.whom
+.whom.nav-item#whom
 	.case
 		.whom__title.h3 Как это работает
 		if whomText
-			.whom__text!= whomText
+			.whom__desc!= whomText
 		.whom__list
-			mixin whom(whom)
-				each item in whom
-					.whom__item
-						.whom__icon-wrap
-							.whom__icon
-								picture
-									img(src=item[1] alt="")
-							.whom__name=item[0]
-							.whom__arrow
-						.whom__text=item[2]
+			each item in whom
+				.whom__item
+					.whom__icon-wrap
+						.whom__icon
+							picture
+								img(src='uploads/' + item[1] alt="")
+						.whom__name!=item[0]
+						.whom__arrow(class=item[3] ? '--back' : null) #[div]
+					.whom__content
+						.whom__text.t1!=item[2]
+	+script('whom', 'blocks')

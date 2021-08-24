@@ -9,17 +9,52 @@ html(lang="ru")
 	body
 		.wrap
 			link(rel="stylesheet" href="template/css/style.css" + version)
+			link(rel="stylesheet" href="template/css/responsive.css" + version)
+			link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
 
-			+style('header', 'blocks')
 			include ../../blocks/header/header
 			+script('header', 'blocks')
 			
-			main.main
+			main.main.sections
 				block content
+				
+			.modals
+				mixin modal(id, title, textarea)
+					.modal.--sm(id='modal-' + id)
+						.modal__close.popup-close
+						.modal__wrap
+							.modal__title.h3=title
+							form.modal__form.row
+								.modal__field.field.--md.--b-black.--bg-gray
+									.field__wrap
+										input.field__area(type="text" name="name")
+										.field__placeholder Ваше имя
+								.modal__field.field.--md.--b-black.--bg-gray.--phone
+									.field__wrap
+										input.field__area(type="tel" name="phone")
+										.field__placeholder Телефон
+								.modal__field.field.--md.--b-black.--bg-gray
+									.field__wrap
+										textarea.field__area(name="comment")
+										.field__placeholder= !textarea ? 'Комментарий' : textarea
+								.modal__foot.row
+									.modal__check.check.--md.--b-black.--bg-gray
+										input.check__input(type="checkbox" name="policy")
+										.check__box
+											<svg viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7.85714L5.8 13L17 1" stroke="#2473FB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+										.check__wrap Я выражаю свое согласие с #[a(href="" target="_blank") Политикой конфиденциальности] и разрешаю обработку своих персональных данных
+									button.modal__btn-send.button.--md.--bg-blue Отправить
 
-			+style('footer', 'blocks')
-			include ../../blocks/footer/footer
-
+				+modal('discuss', 'Обсудить проект')
+				+modal('consult', 'Получить консультацию')
+				+modal('feedback', 'Связаться с нами')
+				+modal('question', 'Задать вопрос', 'Вопрос')
+			script(src="https://unpkg.com/imask")
+			script(src="https://unpkg.com/swiper/swiper-bundle.min.js")
+			+script('field', 'components')
+			+script('check', 'components')
+			+script('tog', 'components')
 			+script('lines', 'components')
 			+script('sscroll', 'components')
+			+script('popup', 'components')
 			script(src="template/js/common.js" + version)

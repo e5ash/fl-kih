@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-  color: #000000;
+  color: #1A1B1F;
   font-size: 16px;
   font-family: "Inter", sans-serif;
   margin-left: auto;
@@ -37,7 +37,7 @@ li {
 }
 
 a {
-  color: #000000;
+  color: #1A1B1F;
   text-decoration: none;
   outline: none;
   transition: 0.3s;

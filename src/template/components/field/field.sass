@@ -39,8 +39,8 @@
 	&__placeholder
 		position: absolute
 		left: 0
-		right: 0
-		transition: opacity $t
+		// right: 0
+		transition: $t
 	&__message
 		display: none
 		color: #f00
@@ -59,20 +59,63 @@
 	&.--sm
 		@include filedSize(50px, 14px, 10px, 80px)
 	&.--md
-		@include filedSize(56px, $fzMain, 18px, 120px)
+		@include filedSize(56px, $fzMain, 18px, 136px)
 	&.--lg
 		@include filedSize(62px, 18px, 25px, 160px)
 				
-	&.--b-gray
+	&.--bg-gray
 		.field
 			&__area
-				border: 1px solid $c-lines
-				border-radius: $radius
+				border: 1px solid #F2F4F5
+				background-color: #F2F4F5
+		
+		&.--focus, &.--filled
+			.field
+				&__area
+					background-color: #fff
+				&__placeholder
+					color: $blue
+					font-size: 12px
+					line-height: 16px
+					background-color: #fff
+					padding-top: 0
+					padding-left: 10px
+					padding-right: 10px
+					margin-left: 14px
+			&.--input
+				.field
+					&__placeholder
+						transform: translateY(-36px)
+			&.--textarea
+				.field
+					&__placeholder
+						transform: translateY(-8px)
+			
+
+	&.--b-black
+		.field
+			&__wrap
+				position: relative
+				&:before
+					content: ''
+					position: absolute
+					bottom: 0
+					left: 0
+					right: 0
+					height: 2px
+					transition: $t
+					background-color: $black
+		&.--focus, &.--filled
+			.field
+				&__wrap
+					&:before
+						height: 4px
+						background-color: #2473FB
 	
 	&.--focus, &.--filled
 		.field
 			&__placeholder
-				opacity: 0
+				// opacity: 0
 		
 	&.--error
 		.field

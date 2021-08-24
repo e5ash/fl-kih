@@ -12,7 +12,6 @@ class Lines {
 			color: '#fff',
 		},
 		line: {
-			step: 10,
 			stroke: 2,
 			opacity: 1,
 			color: '#fff',
@@ -25,9 +24,39 @@ class Lines {
 		},
 		layout: {
 			max: 5,
+			sm: {
+				width: 324,
+				height: 324,
+				min: 1,
+				max: 2,
+				step: 10,
+			},
 			lg: {
-				width: 1920,
-				height: 1200
+				0: {
+					size: 20,
+					min: 2,
+					max: 5,
+					step: 5,
+					lines: 2, 
+				},
+				768: {
+					size: 30,
+					min: 2,
+					max: 5,
+					step: 5,
+					lines: 3, 
+				},
+				1024: {
+					min: 2,
+					max: 10,
+					step: 5,
+					lines: 6, 
+				}
+				width: 2560,
+				height: 1400,
+				min: 2,
+				max: 10,
+				step: 5,
 			}
 		},
 		class: {
@@ -41,17 +70,33 @@ class Lines {
 		this.element = element;
 		this.settings = settings;
 		this.linesCount = 0;
+		this.interval = null;
 		this.attrSize = this.element.getAttribute(this.settings.attr.size);
 		this.size = this.attrSize ? this.settings.layout[this.attrSize] : this.settings.layout['lg'];
-
+		this.lines = [];
 		
-		
-		this.createGrid();
+		// this.createGrid();
+	}
 
+	stopLines() {
+		clearInterval(this.interval);
 
+		for(let i = 0; i < this.lines.length; i++) {
+			let line = this.lines[i];
 
-			
-		setInterval(()=>{
+			// console.log(line.canvas);
+
+			// line.canvas.ctx.clearRect(0,0, canvas.width, canvas.height);
+			line.line = null;
+			line.canvas.remove();
+			clearInterval(line.interval);
+		}
+		this.lines = [];
+		this.linesCount = 0;
+	}
+
+	startLines() {
+		this.interval = setInterval(()=>{
 			if (this.linesCount <= this.settings.layout.max) {
 				let x = this.roundDirection(this.random(0, this.element.offsetWidth)),
 						y = this.roundDirection(this.random(0, this.element.offsetHeight)),
@@ -60,17 +105,7 @@ class Lines {
 				this.createLine(x, y, {X: this.dispersion(d - this.settings.line.dispersion), Y: this.dispersion(d + this.settings.line.dispersion), default: d});
 			}
 		}, 1000);
-
-
-
-
-
-
-
-			
 	}
-
-
 	createCanvas(name, styles) {
 		let canvas = document.createElement('canvas');
 		canvas.classList.add(this.settings.class.name + '__' + name);
@@ -93,6 +128,7 @@ class Lines {
 	}
 
 	createLine(X, Y, direction) {
+		let item = {};
 		let canvas = this.createCanvas('line', {
 			zIndex: -2,
 			width: this.size.width,
@@ -102,9 +138,9 @@ class Lines {
 		let line = {};
 		line.X = X;
 		line.Y = Y; 
-		line.boxes    = this.random(this.settings.line.min, this.settings.line.max);
-		line.length   = this.settings.box.size / this.settings.line.step * line.boxes;
-		line.sizeMove = this.settings.box.size / this.settings.line.step;
+		line.boxes    = this.random(this.size.min, this.size.max);
+		line.length   = this.settings.box.size / this.size.step * line.boxes;
+		line.sizeMove = this.settings.box.size / this.size.step;
 		line.fadinEls = Math.ceil(line.length / 100 * this.settings.line.fadingPercent);
 		line.fadeFrom = line.length - line.fadinEls;
 		line.fadePercent = 100 / line.fadinEls;
@@ -114,7 +150,11 @@ class Lines {
 		line.opacityEls = 0;
 		line.interval = null;
 
+		item.canvas = canvas;
+		item.line = line;
+
 		this.linesCount++;
+		this.lines.push(item)
 			
 		canvas.ctx.lineWidth = this.settings.line.stroke;
 
@@ -146,7 +186,7 @@ class Lines {
 		}
 
 		let draw = ()=>{
-			line.interval = setInterval(()=>{
+			item.interval = line.interval = setInterval(()=>{
 				canvas.ctx.clearRect(0,0, canvas.width, canvas.height);
 				for (let i = 0; i < line.move && i < line.length; i++) {
 					let dash = line.dashes[i],
@@ -175,12 +215,12 @@ class Lines {
 						let lastMove = line.moves[line.moves.length - 1];
 						if (line.move % line.sizeMove == 0) {
 							if (line.move < 4) {
-								line.moves.push(line.lastMove = this.move(dash, this.settings.line.step, direction.default));
+								line.moves.push(line.lastMove = this.move(dash, this.size.step, direction.default));
 							} else {	
-								line.moves.push(line.lastMove = this.move(dash, this.settings.line.step, direction.X, direction.Y));
+								line.moves.push(line.lastMove = this.move(dash, this.size.step, direction.X, direction.Y));
 							}
 						} else {
-							line.moves.push(line.lastMove = this.move(dash, this.settings.line.step, lastMove));
+							line.moves.push(line.lastMove = this.move(dash, this.size.step, lastMove));
 						}	
 						line.draw(i);
 					}
@@ -218,7 +258,7 @@ class Lines {
 
 	createGrid() {
 		let canvas;
-		this.grid = canvas = this.grid = this.createCanvas('bg', {
+		this.grid = canvas = this.createCanvas('bg', {
 			zIndex: -5,
 			width: this.size.width,
 			height: this.size.height
@@ -330,6 +370,7 @@ class Lines {
 			return value;
 		}
 	}
+
 	roundDirection(value) {
 		return value - (value % this.settings.box.size);
 	}

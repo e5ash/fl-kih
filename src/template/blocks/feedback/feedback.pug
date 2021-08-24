@@ -1,24 +1,26 @@
 include ../../pug/vars
 
-.feedback
+.feedback#feedback
 	.case
-		.feedback__title.h2 Связаться с нами
+		.feedback__title.h3 Связаться с нами
 		.feedback__form.row
-			.feedback__field.field.--md.--b-black
+			.feedback__field.field.--md.--b-black.--bg-gray
 				.field__wrap
 					input.field__area(type="text" name="name")
 					.field__placeholder Ваше имя
-			.feedback__field.field.--md.--b-black
+			.feedback__field.field.--md.--b-black.--bg-gray.--phone
 				.field__wrap
 					input.field__area(type="tel" name="phone")
 					.field__placeholder Телефон
-			.feedback__field.field.--md.--b-black
+			.feedback__field.field.--md.--b-black.--bg-gray
 				.field__wrap
 					textarea.field__area(name="comment")
 					.field__placeholder Комментарий
 			.feedback__foot.row
-				.feedback__check.check.--md.--b-black
+				.feedback__check.check.--md.--b-black.--bg-gray
 					input.check__input(type="checkbox" name="policy")
 					.check__box
+						<svg viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 7.85714L5.8 13L17 1" stroke="#2473FB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 					.check__wrap Я выражаю свое согласие с #[a(href="" target="_blank") Политикой конфиденциальности] и разрешаю обработку своих персональных данных
 				button.feedback__btn-send.button.--md.--bg-blue Отправить
+	+style('feedback', 'blocks')

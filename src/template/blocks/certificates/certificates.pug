@@ -1,32 +1,36 @@
 include ../../pug/vars
 
-.certificates
-	.case
-		.certificates__desc Сертификаты
-		.certificates__head
-			.certificates__title.h2 Тело синхронно. Не только в вакууме, но и в любой нейтральной среде относительно низкой плотности
-			.certificates__controls
-				.certificates__control.control.button.--prev
-					<svg width="14" height="25" viewBox="0 0 14 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L1.5 12.5L13 24" stroke="#1E468A"/></svg>
-				.certificates__control.control.button.--next
-					<svg width="14" height="25" viewBox="0 0 14 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L1.5 12.5L13 24" stroke="#1E468A"/></svg>
-		.certificates__wrap
-			.certificates__list
-				.certificates__item(data-src="upload/certificate-1.jpg" data-popup="")
-					picture
-						img(src="upload/certificate-1.jpg" alt="")
-				.certificates__item(data-src="upload/certificate-2.jpg" data-popup="")
-					picture
-						img(src="upload/certificate-2.jpg" alt="")
-				.certificates__item(data-src="upload/certificate-3.jpg" data-popup="")
-					picture
-						img(src="upload/certificate-3.jpg" alt="")
-				.certificates__item(data-src="upload/certificate-1.jpg" data-popup="")
-					picture
-						img(src="upload/certificate-1.jpg" alt="")
-				.certificates__item(data-src="upload/certificate-2.jpg" data-popup="")
-					picture
-						img(src="upload/certificate-2.jpg" alt="")
-				.certificates__item(data-src="upload/certificate-3.jpg" data-popup="")
-					picture
-						img(src="upload/certificate-3.jpg" alt="")
+.certificates.section.bg-white#certificates
+	.section__inner
+		.case
+			.certificates__inner
+				.certificates__desc.h6 Сертификаты
+				.certificates__head
+					.certificates__title.h2 Тело синхронно. Не только в вакууме, но и в любой нейтральной среде относительно низкой плотности
+					.certificates__controls.controls
+						.certificates__control.control.button.--prev
+							<svg width="14" height="25" viewBox="0 0 14 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L1.5 12.5L13 24" stroke="#1E468A"/></svg>
+						.certificates__control.control.button.--next
+							<svg width="14" height="25" viewBox="0 0 14 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L1.5 12.5L13 24" stroke="#1E468A"/></svg>
+				.certificates__wrap.swiper-container
+					.certificates__list.swiper-wrapper
+						.certificates__item.swiper-slide(data-src="uploads/certificate-1.jpg" data-popup="")
+							picture
+								img(src="uploads/certificate-1.jpg" width="330" height="468" alt="")
+						.certificates__item.swiper-slide(data-src="uploads/certificate-2.jpg" data-popup="")
+							picture
+								img(src="uploads/certificate-2.jpg" width="330" height="468" alt="")
+						.certificates__item.swiper-slide(data-src="uploads/certificate-3.jpg" data-popup="")
+							picture
+								img(src="uploads/certificate-3.jpg" width="330" height="468" alt="")
+						.certificates__item.swiper-slide(data-src="uploads/certificate-1.jpg" data-popup="")
+							picture
+								img(src="uploads/certificate-1.jpg" width="330" height="468" alt="")
+						.certificates__item.swiper-slide(data-src="uploads/certificate-2.jpg" data-popup="")
+							picture
+								img(src="uploads/certificate-2.jpg" width="330" height="468" alt="")
+						.certificates__item.swiper-slide(data-src="uploads/certificate-3.jpg" data-popup="")
+							picture
+								img(src="uploads/certificate-3.jpg" width="330" height="468" alt="")
+	+style('certificates', 'blocks')
+	+script('certificates', 'blocks')

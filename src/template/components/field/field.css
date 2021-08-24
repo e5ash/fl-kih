@@ -17,8 +17,7 @@
 .field__placeholder {
   position: absolute;
   left: 0;
-  right: 0;
-  transition: opacity 0.3s;
+  transition: 0.3s;
 }
 .field__message {
   display: none;
@@ -91,7 +90,7 @@
 .field.--md textarea.field__area {
   font-size: 16px;
   line-height: 1.4;
-  height: 120px;
+  height: 136px;
   padding: 16px 18px 16px 18px;
 }
 .field.--lg .field__placeholder {
@@ -115,12 +114,45 @@
   height: 160px;
   padding: 23px 25px 23px 25px;
 }
-.field.--b-gray .field__area {
-  border: 1px solid #eee;
-  border-radius: 5px;
+.field.--bg-gray .field__area {
+  border: 1px solid #F2F4F5;
+  background-color: #F2F4F5;
 }
-.field.--focus .field__placeholder, .field.--filled .field__placeholder {
-  opacity: 0;
+.field.--bg-gray.--focus .field__area, .field.--bg-gray.--filled .field__area {
+  background-color: #fff;
+}
+.field.--bg-gray.--focus .field__placeholder, .field.--bg-gray.--filled .field__placeholder {
+  color: #1E468A;
+  font-size: 12px;
+  line-height: 16px;
+  background-color: #fff;
+  padding-top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 14px;
+}
+.field.--bg-gray.--focus.--input .field__placeholder, .field.--bg-gray.--filled.--input .field__placeholder {
+  transform: translateY(-36px);
+}
+.field.--bg-gray.--focus.--textarea .field__placeholder, .field.--bg-gray.--filled.--textarea .field__placeholder {
+  transform: translateY(-8px);
+}
+.field.--b-black .field__wrap {
+  position: relative;
+}
+.field.--b-black .field__wrap:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  transition: 0.3s;
+  background-color: #1A1B1F;
+}
+.field.--b-black.--focus .field__wrap:before, .field.--b-black.--filled .field__wrap:before {
+  height: 4px;
+  background-color: #2473FB;
 }
 .field.--error .field__area {
   border-color: #f00;

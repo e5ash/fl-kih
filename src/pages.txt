@@ -1,0 +1,12 @@
+http://localhost:3000/index.html
+http://localhost:3000/index-2.html
+http://localhost:3000/index-3.html
+http://localhost:3000/index-4.html
+http://localhost:3000/index-5.html
+http://localhost:3000/index-6.html
+
+http://localhost:3000/integrating.html
+http://localhost:3000/solutions.html
+http://localhost:3000/contacts.html
+
+http://localhost:3000/sed.html

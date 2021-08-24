@@ -32,6 +32,38 @@
 .button.--bg-blue:hover {
   background-color: #153160;
 }
+.button.--b-white {
+  color: #fff;
+  border: 1px solid #fff;
+}
+.button.--b-white:after {
+  background-color: #fff;
+}
+.button.--b-white:hover {
+  color: #1E468A;
+  background-color: #fff;
+}
+.button.--b-white:hover:after {
+  background-color: #1E468A;
+}
+.button.--bg-transparent {
+  background-color: transparent;
+}
+.button.--bg-white {
+  color: #1E468A;
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+.button.--bg-white:after {
+  background-color: #1E468A;
+}
+.button.--bg-white:hover {
+  color: #fff;
+  background-color: transparent;
+}
+.button.--bg-white:hover:after {
+  background-color: #fff;
+}
 .button.--b-gray {
   border: 1px solid #eee;
   border-radius: 5px;
@@ -46,7 +78,7 @@
 }
 .button.--md {
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 700;
   min-height: 60px;
   padding: 0 32px;
   text-transform: uppercase;

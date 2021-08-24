@@ -1,23 +1,26 @@
 extends ../../templates/default
 block vars
 	-
-		title = ""
+		title = "Контакты"
 		breadcrumbs = [
 			['Главная', 'index.html'],
 			[title]
 		]
 block content
 	.intro.section.lines.bgw
-		.case
-			.intro__content
-				.intro__title.h1 8-800-234-25-42
-				.intro__btns.row
-					a.intro__button.button.--md.--bg-blue(href="") Связаться с нами
-					a.intro__button.button.--md.--bg-transparent(href="" target="_blank") На карте
-				.intro__contacts
-					.intro__address 350010, г. Краснодар, #[br]ул. Зиповская, 5
-					.intro__reqs #[a(href="") Скачать реквизиты ООО «КИХ-Юг»]
+		.section__inner
+			.case
+				.intro__content
+					.intro__title.h1 8-800-234-25-42
+					.intro__btns.row
+						a.intro__button.button.--lg.--bg-blue(href="#modal-feedback" data-popup="") Связаться с нами
+						a.intro__button.button.--lg.--b-white(href="https://yandex.ru/maps/35/krasnodar/house/zipovskaya_ulitsa_5/Z0EYfw5lTkQDQFpvfXx3cnhgZg==/?ll=38.995713%2C45.063432&utm_source=main_stripe_big&z=17" target="_blank") На карте
+					.intro__contacts.row
+						.intro__address 350010, г. Краснодар, #[br]ул. Зиповская, 5
+						.intro__reqs #[a(href="" download="") Скачать реквизиты ООО «КИХ-Юг»]
 
 		.intro__bg.bg
 			picture
-				img(src="upload/contacts-bg.jpg" alt="")
+				img(src="uploads/contacts-bg.jpg" alt="")
+
+	include ../../../blocks/footer/footer

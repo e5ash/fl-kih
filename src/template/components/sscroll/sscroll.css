@@ -1,0 +1,20 @@
+html.sscroll-overflow-disable, body.sscroll-overflow-disable {
+  overflow: hidden;
+}
+
+.sscroll__section {
+  z-index: -1;
+}
+.sscroll__section.--current {
+  z-index: 5;
+}
+.sscroll__section-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}

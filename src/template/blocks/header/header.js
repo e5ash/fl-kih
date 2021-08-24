@@ -2,14 +2,16 @@ let header = document.querySelector('.header'),
 		headerClassScroll = '--scrolled';
 
 
-
 toggleHeaderClassScroll();
-document.addEventListener('scroll', ()=>{
+window.addEventListener('scroll', ()=>{
 	toggleHeaderClassScroll();
 });
 
+// document.addEventListener('wheel', ()=>{
+// 	toggleHeaderClassScroll();
+// });
+
 function toggleHeaderClassScroll() {
-	console.log(document.body.scrollTop);
 	if (window.pageYOffset > 0) {
 		header.classList.add(headerClassScroll);
 	} else {

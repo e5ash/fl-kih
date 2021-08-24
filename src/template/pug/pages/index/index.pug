@@ -1,15 +1,15 @@
 extends ../../templates/default
 block vars
 	-
-		title = "Главная страница"
+		title = "КИХ"
 		isMain = true
 
 block content
-	.intro.section.lines.bgw(data-lines-size="lg")
+	.intro.section.lines.bgw.c-white#intro(data-lines-size="lg")
 		.section__inner
 			.case
 				.intro__content
-					.intro__title.h1 Автоматизация бизнес-процессов, разработка и внедрение
+					.intro__title.h1 #[span #[u #[i Автоматизация]] #[u #[i бизнес-процессов,]] #[u #[i разработка и]] #[u #[i внедрение]]]
 					.intro__btns.row
 						a.intro__button.button.--lg.--bg-blue(href="#modal-feedback" data-popup="") Обсудить проект
 				.intro__scroll.scroll
@@ -22,17 +22,14 @@ block content
 			picture
 				img(src="uploads/intro-1.jpg" alt="")
 
-	include ../../../blocks/solutions/solutions
-	+style('solutions', 'blocks')
+	//- include ../../../blocks/solutions/solutions
 
 	//- include ../../../blocks/philosophy/philosophy
-	//- +style('philosophy', 'blocks')
-
+	
 	//- include ../../../blocks/mission/mission
-	//- +style('mission', 'blocks')
 
 	//- include ../../../blocks/timeline/timeline
-	//- +style('timeline', 'blocks')
 
 	//- include ../../../blocks/certificates/certificates
-	//- +style('certificates', 'blocks')
+
+	//- include ../../../blocks/footer/footer

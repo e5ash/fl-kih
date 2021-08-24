@@ -1,72 +1,61 @@
 extends ../../templates/default
 block vars
 	-
-		title = ""
+		title = "Такси"
 		breadcrumbs = [
 			['Главная', 'index.html'],
 			[title]
 		]
 block content
-	.intro.section.lines.bg-green-l
-		.case
-			.intro__content
-				.intro__text Инструмент повышения безопасности пассажирских перевозок легковыми такси
-				.intro__title.h1 Такси
-				.intro__btns.row
-					a.intro__button.button.--md.--bg-white(href="") Попробовать бесплатно
-					a.intro__button.button.--md.--bg-transparent(href="" target="_blank") Купить
+	.intro.section.lines.bg-yellow#intro
+		.section__inner
+			.case
+				.intro__content
+					.intro__text Инструмент повышения безопасности пассажирских перевозок легковыми такси
+					.intro__title.h1 #[span #[u #[i Такси]]]
+					.intro__btns.row
+						a.intro__button.button.--lg.--bg-white(href="") Попробовать бесплатно
+						a.intro__button.button.--lg.--b-white(href="" target="_blank") Купить
 			.intro__icon
 				picture
-					img(src="upload/taxi.svg" alt="")
+					img(src="uploads/taxi.svg" alt="")
 
-	.sidenav
-		ul
-			li
-				a(href="#solution") Выгоды использования
-			li
-				a(href="#advanages") Как это работает
-			li
-				a(href="#how") Функциональные возможности
-			li
-				a(href="#reviews") Отзывы клиентов
-			li
-				a(href="#faq") Частые вопросы
+	.section.overflow-y.has-nav.solution-body#solution-body
+		.section__inner
+			.case
+				-
+					solutionTitle = '«ТаксиР»  - автоматизированная система ведения реестра разрешений на осуществление деятельности по перевозке пассажиров и багажа легковым такси. Включена в реестр отечественного ПО согласно Приказу от 22.02.2019 №63'
+					solutionText  = 'Решение является инструментом повышения безопасности пассажирских перевозок легковыми такси, а также способствует комфортному взаимодействию органов власти и автотранспортных предприятий'
+					solutionReestr = true
 
-	-
-		solutionTitle = '«ТаксиР»  - автоматизированная система ведения реестра разрешений на осуществление деятельности по перевозке пассажиров и багажа легковым такси. Включена в реестр отечественного ПО согласно Приказу от 22.02.2019 №63'
-		solutionText  = 'Решение является инструментом повышения безопасности пассажирских перевозок легковыми такси, а также способствует комфортному взаимодействию органов власти и автотранспортных предприятий'
-		solutionReestr = true
+				include ../../../blocks/solution/solution
 
-	include ../../../blocks/solution/solution
-	+style('solution', 'blocks')
+				-
+					advantages = [
+						['Оптимизируйте работу', 'web-up.svg'],
+						['Увеличивайте доходы', 'stats-up-bold.svg'],
+						['Повышайте уровень безопасности', 'sheild-up.svg'],
+						['Усиливайте контроль', 'magniffic-glass.svg'],
+					]
+				include ../../../blocks/advantages/advantages
 
-	-
-		advantages = [
-			['Оптимизируйте работу', 'web-up.svg'],
-			['Увеличивайте доходы', 'stats-up-bold.svg'],
-			['Повышайте уровень безопасности', 'sheild-up.svg'],
-			['Усиливайте контроль', 'magniffic-glass.svg'],
-		]
-	include ../../../blocks/advantages/advantages
-	+style('advantages', 'blocks')
-
-	-
-		whom = [
-			['1 этап. Реестр заявлений', 'docs-copy.svg', '<ul><li>Сотрудник органа исполнительной власти формирует заявление</li><li>Прикрепляются скан-копии первичных документов</li></ul>'],
-			['2 этап. Реестр приказов', 'doc-signature.svg', '<li>Формируется автоматически на основании ранее внесенных данных</li><li>Приказ печатается на бланке утвержденной формы для последующего согласования у руководителя </li><li>После утверждения приказа данные попадают в другие справочники Системы</li>'],
-			['3 этап. Реестр разрешений', 'certificate.svg', '<ul><li>Формируется автоматически из приказа</li><li>Разрешение печатается на бланке утвержденной формы</li><li>Информация отображается в публичных источниках (мобильном приложении и web-портале)</li></ul>']
-		]
-	include ../../../blocks/whom/whom
-	+style('whom', 'blocks')
+				-
+					whom = [
+						['1 этап. Реестр заявлений', 'docs-copy.svg', '<ul><li>Сотрудник органа исполнительной власти формирует заявление</li><li>Прикрепляются скан-копии первичных документов</li></ul>'],
+						['2 этап. Реестр приказов', 'doc-signature.svg', '<li>Формируется автоматически на основании ранее внесенных данных</li><li>Приказ печатается на бланке утвержденной формы для последующего согласования у руководителя </li><li>После утверждения приказа данные попадают в другие справочники Системы</li>'],
+						['3 этап. Реестр разрешений', 'certificate.svg', '<ul><li>Формируется автоматически из приказа</li><li>Разрешение печатается на бланке утвержденной формы</li><li>Информация отображается в публичных источниках (мобильном приложении и web-портале)</li></ul>']
+					]
+				include ../../../blocks/whom/whom
 
 	include ../../../blocks/philosophy/philosophy
-	+style('philosophy', 'blocks')
 
-	include ../../../blocks/reviews/reviews
-	+style('reviews', 'blocks')
+	.section.overflow-y.has-nav.solution-foot#solution-foot
+		.section__inner
+			.case
+				include ../../../blocks/reviews/reviews
+				
+				include ../../../blocks/faq/faq
 
-	include ../../../blocks/faq/faq
-	+style('faq', 'blocks')
-
-	include ../../../blocks/feedback/feedback
-	+style('feedback', 'blocks')
+				include ../../../blocks/feedback/feedback
+			
+	include ../../../blocks/footer/footer

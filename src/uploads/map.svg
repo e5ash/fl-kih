@@ -1891,7 +1891,7 @@
 <defs>
 <linearGradient id="paint0_linear" x1="677.313" y1="1.2318e-05" x2="-3.82308e-06" y2="503" gradientUnits="userSpaceOnUse">
 <stop offset="0.633565" stop-color="white"/>
-<stop offset="1" stop-color="#00A743"/>
+<stop offset="1" stop-color="transparent"/>
 </linearGradient>
 <linearGradient id="paint1_linear" x1="676" y1="32.2857" x2="675.999" y2="33.9759" gradientUnits="userSpaceOnUse">
 <stop stop-color="white"/>

@@ -1,28 +1,32 @@
 extends ../../templates/default
 block vars
 	-
-		title = ""
+		title = "Опыт внедрений"
 		breadcrumbs = [
 			['Главная', 'index.html'],
 			[title]
 		]
 block content
-	.intro.section.lines.bgw
-		.case
-			.intro__content.--pl
-				.intro__title.h1 Опыт внедрений
-				.intro__btns.row
-					a.intro__button.button.--md.--bg-white(href="") Обсудить проект
-			.intro__scroll.scroll
-				.scroll__box
-				.scroll__title Скрольте #[br]вниз
-			.intro__pluses.pluses
+	.intro.section.lines.bgw.bg-blue.c-white#intro
+		.section__inner
+			.case
+				.intro__content.--pl
+					.intro__title.h1 #[span #[u #[i Опыт внедрений]]]
+					.intro__btns.row
+						a.intro__button.button.--lg.--bg-white(href="#modal-discuss" data-popup="") Обсудить проект
+				.intro__scroll.scroll
+					.scroll__box
+					.scroll__title Скрольте #[br]вниз
+		.intro__pluses.pluses
+			picture
+				img(src="uploads/pluses.svg" alt="")
 		.intro__bg.bg
 			picture
-				img(src="upload/integrating.jpg" alt="")
+				img(src="uploads/integrating.jpg" alt="")
 
 	include ../../../blocks/doc/doc
-	+style('doc', 'blocks')
-
+	
 	include ../../../blocks/partners/partners
-	+style('partners', 'blocks')
+
+	include ../../../blocks/footer/footer
+	

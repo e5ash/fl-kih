@@ -4,23 +4,23 @@ var html = document.querySelector('html'),
 
 document.addEventListener('DOMContentLoaded', ()=>{
 	// Fields
-	// let fields = document.querySelectorAll('.field');
+	let fields = document.querySelectorAll('.field');
 	 
-	// if (fields) {
-	// 	fields.forEach((field)=>{
-	// 		new Field(field);
-	// 	});
-	// }
+	if (fields) {
+		fields.forEach((field)=>{
+			new Field(field);
+		});
+	}
 
 
-	// // Checks
-	// let checks = document.querySelectorAll('.check');
+	// Checks
+	let checks = document.querySelectorAll('.check');
 	 
-	// if (checks) {
-	// 	checks.forEach((check)=>{
-	// 		new Check(check);
-	// 	});
-	// }
+	if (checks) {
+		checks.forEach((check)=>{
+			new Check(check);
+		});
+	}
 
 
 	// // Selects
@@ -39,20 +39,96 @@ document.addEventListener('DOMContentLoaded', ()=>{
 	// 		}
 	// 	})
 	// }
-	
-	let sections = document.querySelectorAll('.section');
-	if (sections) {
-		new Sscroll(sections);
-	}
 
 
 	let lines = document.querySelectorAll('.lines');
 	if (lines) {
 		lines.forEach((el)=>{
-			// new Lines(el);
+			el.lines = new Lines(el);
 		});
 	}
 
 
+	document.body.sscroll = new Sscroll();
 
+	let sideNav = document.querySelector('.sidenav'),
+			sideNavItem = document.querySelectorAll('.nav-item'),
+			sideNavClassShow = '--show',
+			sideNavClassCurrent = '--current',
+			sideNavCurrent = null,
+			sideNavIsShow = false;
+
+	if (sideNav && sideNavItem) {
+		sideNavItem.forEach((item)=>{
+			item.link = sideNav.querySelector('a[href*="' + item.id + '"]');
+			
+			item.section = item.closest('.section');
+			item.inner = item.section.inner;
+			item.inner.addEventListener('scroll', ()=>{
+				sideNavToggleLink();
+			});
+
+			item.link.addEventListener('click', (event)=>{
+				event.preventDefault();
+
+				let section = document.querySelector('.section.--current');
+
+				if (section == item.section) {
+					item.scrollIntoView({
+						behavior: 'smooth',
+						block: 'start'
+					});
+				} else {
+					document.body.sscroll.moveSection(section);
+					item.scrollIntoView({
+						behavior: 'smooth',
+						block: 'start'
+					});
+				}
+			});
+		});
+
+		sideNavToggleLink();
+
+		window.addEventListener('resize', ()=>{
+			sideNavToggleLink();
+		});
+
+		document.addEventListener('scroll', ()=>{
+			sideNavToggleLink();
+		});
+
+		function toggleCurrent(link) {
+			if (sideNavCurrent == link) {
+				return false;
+			}
+
+			if (sideNavCurrent) {
+				sideNavCurrent.classList.remove(sideNavClassCurrent);
+			}
+
+			sideNavCurrent = link;
+			sideNavCurrent.classList.add(sideNavClassCurrent);
+		}
+
+		function sideNavToggleLink(){
+			sideNavItem.forEach((item, i)=>{
+				if (i == 0) {
+					sideNavIsShow = false;
+				}
+				console.log(item.section.offsetTop, item.offsetHeight, window.pageYOffset)
+				if (window.pageYOffset >= item.section.offsetTop && window.pageYOffset <= (item.section.offsetTop + item.section.offsetHeight) && item.section.inner.scrollTop >= item.offsetTop && item.section.inner.scrollTop <= (item.offsetTop + item.offsetHeight)) {
+					item.link.classList.add(sideNavClassCurrent);
+					toggleCurrent(item.link);
+					sideNavIsShow = true;
+					sideNav.classList.add(sideNavClassShow);
+				}
+
+				if (!sideNavIsShow) {
+					sideNavIsShow = false;
+					sideNav.classList.remove(sideNavClassShow);
+				}
+			});
+		}
+	}
 });

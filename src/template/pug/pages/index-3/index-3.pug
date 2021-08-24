@@ -1,0 +1,36 @@
+extends ../../templates/default
+block vars
+	-
+		title = "Главная страница"
+		isMain = true
+
+block content
+	.intro.section.lines.bgw.c-white(data-lines-size="lg")
+		.section__inner
+			.case
+				.intro__content
+					.intro__title.h1 Автоматизация бизнес-процессов, разработка и внедрение
+					.intro__btns.row
+						a.intro__button.button.--lg.--bg-blue(href="#modal-feedback" data-popup="") Обсудить проект
+				.intro__scroll.scroll
+					.scroll__box
+					.scroll__title Скрольте #[br]вниз
+		.intro__pluses.pluses
+			picture
+				img(src="uploads/pluses.svg" alt="")
+		.intro__bg.bg
+			picture
+				img(src="uploads/intro-3.jpg" alt="")
+
+	include ../../../blocks/solutions/solutions
+
+	include ../../../blocks/philosophy/philosophy
+	
+	include ../../../blocks/mission/mission
+
+	include ../../../blocks/timeline/timeline
+
+	include ../../../blocks/certificates/certificates
+
+
+	include ../../../blocks/footer/footer

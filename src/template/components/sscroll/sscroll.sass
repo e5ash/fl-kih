@@ -1,2 +1,21 @@
 @import ../../sass/vars
 
+html, body
+	&.sscroll-overflow-disable
+		overflow: hidden
+
+.sscroll
+	&__section
+		z-index: -1
+		&.--current
+			z-index: 5
+		
+	&__section-inner
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		overflow-y: auto
+		overflow-x: hidden
+		height: 100%
