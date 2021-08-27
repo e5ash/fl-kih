@@ -1,0 +1,155 @@
+.mission__content {
+  width: 580px;
+}
+.mission__btn-more {
+  display: none;
+}
+.mission__quote {
+  width: 330px;
+  margin-left: auto;
+  position: relative;
+  margin-right: 245px;
+}
+
+.quote__text {
+  position: relative;
+}
+.quote__text:before {
+  content: "<";
+  font-size: 32px;
+  line-height: 16px;
+  color: #1A1B1F;
+  position: absolute;
+  top: 7px;
+  left: -40px;
+}
+.quote__text:after {
+  content: "/>";
+  font-size: 32px;
+  line-height: 32px;
+  color: #1A1B1F;
+  position: absolute;
+  right: -43px;
+  bottom: 26px;
+}
+.quote__text p {
+  opacity: 0.7;
+}
+.quote__author {
+  margin-top: 34px;
+}
+
+.q-author {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.q-author__img {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+}
+.q-author__text {
+  width: calc(100% - 84px);
+  padding-left: 40px;
+}
+.q-author__name {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.q-author__desc {
+  font-size: 12px;
+  line-height: 16px;
+  opacity: 0.5;
+  max-width: 140px;
+}
+
+@media screen and (max-height: 600px) {
+  .mission .section__inner {
+    padding-top: 120px;
+  }
+  .mission__wrap {
+    padding-bottom: 40px;
+  }
+}
+@media screen and (max-width: 1350px) {
+  .mission__quote {
+    margin-right: 130px;
+  }
+}
+@media screen and (max-width: 1145px) {
+  .mission__quote {
+    margin-right: 50px;
+  }
+
+  .quote__text:after {
+    bottom: 0;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .mission__content {
+    max-width: 500px;
+  }
+  .mission__quote {
+    margin-right: 50px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .mission .section__inner {
+    padding-top: 100px;
+  }
+  .mission__wrap {
+    padding-bottom: 70px;
+  }
+  .mission__content {
+    width: 100%;
+    max-width: 100%;
+  }
+  .mission__title {
+    margin-bottom: 32px;
+  }
+  .mission__btn-more {
+    display: flex;
+  }
+  .mission__quote {
+    width: 100%;
+    margin-right: 50px;
+    padding-left: 40px;
+    margin-top: 45px;
+  }
+
+  .quote__text:after {
+    bottom: 22px;
+  }
+  .quote__author {
+    margin-top: 24px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .quote {
+    padding-left: 27px;
+  }
+  .quote__text:before, .quote__text:after {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .quote__text:before {
+    top: 0;
+    left: -27px;
+  }
+  .quote__text:after {
+    right: -27px;
+    bottom: 0;
+  }
+
+  .q-author__img {
+    width: 80px;
+    height: 80px;
+  }
+  .q-author__text {
+    width: calc(100% - 80px);
+    padding-left: 24px;
+  }
+}

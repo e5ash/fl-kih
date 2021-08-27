@@ -13,7 +13,7 @@ block content
 				.intro__content.--pl
 					.intro__title.h1 #[span #[u #[i Опыт внедрений]]]
 					.intro__btns.row
-						a.intro__button.button.--lg.--bg-white(href="#modal-discuss" data-popup="") Обсудить проект
+						a.intro__button.button.--lg.--bg-blue(href="#modal-discuss" data-popup="") Обсудить проект
 				.intro__scroll.scroll
 					.scroll__box
 					.scroll__title Скрольте #[br]вниз
@@ -23,6 +23,8 @@ block content
 		.intro__bg.bg
 			picture
 				img(src="uploads/integrating.jpg" alt="")
+
+		+style('intro', 'blocks')
 
 	include ../../../blocks/doc/doc
 	

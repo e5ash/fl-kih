@@ -1,13 +1,178 @@
 @import ../../sass/vars
 
-// .solus
+.solus
+	.section__inner
+		padding-top: 150px
+		padding-bottom: 80px
+	&__inner
+		max-width: 946px
+		margin-left: auto
+		margin-right: auto
+		padding-bottom: 80px
+	&__text
+		font-size: 48px
+		line-height: 56px
+		margin-bottom: 77px
+	&__item
+		display: block
+		position: relative
+		height: 408px
+		padding: 53px 56px
+		margin-bottom: 40px
+		overflow: hidden
+		&:hover
+			.solus
+				&__name
+					transform: translateX(15px)
+		&:last-of-type
+			margin-bottom: 0
+		&.--sed
+			.solus
+				&__icon
+					top: 56px
+					right: -40px
+					height: 600px
 
-@media screen and (max-width: 1220px)
-	// .solus
+		&.--transport
+			.solus
+				&__icon
+					top: 56px
+					right: -40px
+					height: 408px
+
+		&.--taxi
+			.solus
+				&__icon
+					top: 24px
+					right: 31px
+					width: 421px
+					height: 392px
+		&.--citizen
+			.solus
+				&__icon
+					top: 40px
+					right: 49px
+					width: 403px
+					height: 327px
+		&.--gbo
+			.solus
+				&__icon
+					top: 56px
+					right: -40px
+					height: 600px
+		&.--monitorig
+			.solus
+				&__icon
+					top: 56px
+					right: -40px
+					height: 600px
+					
+			
+
+	&__name
+		font-size: 40px
+		line-height: 40px
+		font-weight: 700
+		max-width: 400px
+		color: #fff
+		transition: .5s
+
+	&__icon
+		position: absolute
+		top: 0
+		right: 0
+		width: 495px
+
+@media screen and (max-width: 1200px)
+	.solus
+		.section__inner
+			padding-top: 120px
+		&__text
+			font-size: 32px
+			line-height: 40px
+			margin-bottom: 60px
 		
-@media screen and (max-width: 992px)
-	// .solus
-		
+
+@media screen and (max-width: 1023px)
+	.solus
+		&__item
+			height: 305px
+			margin-bottom: 16px
+			&.--taxi
+				.solus
+					&__icon
+						width: 309px
+						height: 288px
+						margin-right: 35px
+			&.--citizen
+				.solus
+					&__icon
+						width: 285px
+						height: 232px
+		&__icon
+			width: 365px
+
+		&__name
+			font-size: 24px
+			line-height: 32px
+
 @media screen and (max-width: 767px)
-	// .solus
-		
+	.solus
+		.section__inner
+			padding-top: 80px
+		&__text
+			font-size: 20px
+			line-height: 25px
+			margin-bottom: 30px
+		&__inner
+			padding-bottom: 60px
+		&__text
+			margin-bottom: 35px
+		&__list
+			display: grid
+			grid: none / repeat(1, 1fr)
+		&__item
+			// display: flex
+			// align-items: center
+			// justify-content: center
+			// text-align: center
+			padding: 30px 10px 10px 30px
+			height: 300px
+			margin-bottom: 10px
+			&.--sed, &.--transport, &.--taxi, &.--citizen, &.--gbo, &.--monitorig
+				.solus
+					&__icon
+						top: 100px
+						right: 50%
+			&.--taxi
+				.solus
+					&__icon
+						width: 257px
+						height: 240px
+						margin-right: 0
+						margin-top: -35px
+			&.--citizen
+				.solus
+					&__icon
+						width: 243px
+						height: 198px
+						margin-top: -15px
+						margin-right: -30px
+			&.--sed, &.--transport, &.--gbo, &.--monitorig
+				.solus
+					&__icon
+						margin-right: -25px
+			&:hover
+				.solus
+					&__name
+						transform: none
+		&__icon
+			width: 290px
+			right: 50%
+			top: 100px
+			transform: translateX(50%)
+			// margin-right: -50px
+			// display: none
+		&__name
+			font-size: 20px
+			line-height: 25px

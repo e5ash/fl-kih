@@ -20,28 +20,31 @@ block content
 				picture
 					img(src="uploads/docs.svg" alt="")
 
+		+style('intro', 'blocks')
+
 	
 	
 	.section.overflow-y.has-nav.solution-body#solution-body
 		.section__inner
 			.case
-				-
-					solutionTitle = 'СЭД «СИНКОПА-ДОКУМЕНТ» - это готовое решение дляавтоматизации процессов делопроизводства, систематизации работы с документами с возможностью архивного хранения, контроля исполнительской дисциплины'
-					solutionText  = undefined
-					solutionReestr = true
+				.nav-item#solution
+					-
+						solutionTitle = 'СЭД «СИНКОПА-ДОКУМЕНТ» - это готовое решение дляавтоматизации процессов делопроизводства, систематизации работы с документами с возможностью архивного хранения, контроля исполнительской дисциплины'
+						solutionText  = undefined
+						solutionReestr = true
+						
+					include ../../../blocks/solution/solution
 					
-				include ../../../blocks/solution/solution
-				
 
-				-
-					advantages = [
-						['Экономьте <br>время', 'clock.svg'],
-						['Создавайте удобства', 'comp-like.svg'],
-						['Сокращайте количество <br>бумаги', 'docs-copy.svg'],
-						['Контролируйте', 'equalizer.svg'],
-					]
+					-
+						advantages = [
+							['Экономьте <br>время', 'clock.svg'],
+							['Создавайте удобства', 'comp-like.svg'],
+							['Сокращайте количество <br>бумаги', 'docs-copy.svg'],
+							['Контролируйте', 'equalizer.svg'],
+						]
 
-				include ../../../blocks/advantages/advantages
+					include ../../../blocks/advantages/advantages
 				
 
 				-

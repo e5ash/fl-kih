@@ -1,0 +1,140 @@
+.doc .section__inner {
+  padding-top: 80px;
+}
+.doc__wrap {
+  padding-bottom: 60px;
+}
+.doc__content {
+  max-width: 700px;
+  padding-top: 122px;
+  margin-right: -85px;
+  margin-left: 240px;
+}
+.doc__texts {
+  margin-top: 65px;
+  grid: none/repeat(2, 1fr);
+  gap: 40px;
+}
+.doc__text {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 300;
+}
+.doc__text h5 {
+  font-weight: 700;
+  min-height: 32px;
+  width: 100%;
+  display: block;
+  margin-bottom: 8px;
+}
+.doc__docs {
+  width: 577px;
+}
+.doc.--reverse .doc__icon {
+  order: 1;
+}
+.doc.--reverse .doc__content {
+  order: 2;
+  margin-left: 150px;
+  margin-right: 0;
+}
+
+@media screen and (max-width: 1500px) {
+  .doc__wrap {
+    align-items: center;
+    padding-bottom: 0;
+  }
+  .doc__content {
+    width: calc(100% - 435px);
+    margin-left: auto;
+    margin-right: 0;
+    padding-top: 0;
+    padding-right: 60px;
+  }
+  .doc__icon {
+    margin-left: auto;
+    width: 435px;
+    height: 560px;
+  }
+  .doc__icon picture {
+    width: auto;
+    height: 100%;
+  }
+  .doc__texts {
+    margin-top: 25px;
+  }
+  .doc.--reverse .doc__icon {
+    margin-left: 0;
+  }
+  .doc.--reverse .doc__content {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 60px;
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .doc__icon {
+    width: 350px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.6;
+  }
+  .doc__content {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0;
+  }
+  .doc__title {
+    padding-top: 73px;
+    min-height: 351px;
+    max-width: calc(100% - 350px + 90px);
+    margin-right: -90px;
+  }
+  .doc__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .doc.--reverse .doc__content {
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .doc .section__inner {
+    padding-top: 60px;
+  }
+  .doc__wrap {
+    padding-bottom: 100px;
+  }
+  .doc__icon {
+    width: 280px;
+    height: 363px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .doc__title {
+    max-width: 100%;
+    min-height: 1px;
+    margin-bottom: 12px;
+    padding-top: 330px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .doc__title {
+    font-size: 20px;
+    line-height: 25px;
+    margin-right: 0;
+  }
+  .doc__texts {
+    grid: none/repeat(1, 1fr);
+    gap: 20px;
+  }
+  .doc__text h5 {
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .doc__text h5:empty {
+    display: none;
+  }
+}

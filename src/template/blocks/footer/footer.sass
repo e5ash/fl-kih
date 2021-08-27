@@ -1,13 +1,204 @@
 @import ../../sass/vars
 
-// .footer
+.footer
+	color: #fff
+	z-index: 3
+	position: relative
+	// height: auto !important
+	min-height: 1px
+	a
+		color: #fff
+	.section__inner
+		padding-top: 0
+		height: auto
+		> .case
+			padding-left: 0
+			padding-right: 0
+			max-width: 100%
+			.case
+				padding-left: 32px
+				padding-right: 32px
+	&__top
+		display: none
+	&__mid
+		width: 100%
+		padding-top: 43px
+		padding-bottom: 45px
+		background-color: $black
 
-@media screen and (max-width: 1220px)
-	// .footer
+	&__bot
+		width: 100%
+		padding: 40px 0
+		background-color: #313235
+		&-inner
+			display: flex
+			align-items: center
+	&__copy
+		margin-left: 250px
+		font-size: 16px
+		line-height: 19px
+		letter-spacing: 0.03em
+		text-transform: uppercase
+		opacity: 0.6
+		font-weight: 500
+		max-width: 500px
+	&__phone
+		margin-left: auto
+		margin-right: 40px
+		font-size: 13px
+		line-height: 16px
+		font-weight: 700
+		letter-spacing: 0.03em
+		text-transform: uppercase
+	&__btn-question
+		font-size: 13px
+		line-height: 16px
+		font-weight: 500
+		letter-spacing: 0.03em
+		text-transform: uppercase
+		opacity: 0.6
+		&:hover
+			opacity: 1
 		
-@media screen and (max-width: 992px)
-	// .footer
-		
+
+
+.f-nav
+	&__list
+		display: flex
+	&__item
+		width: 25%
+	&__title
+		font-size: 13px
+		line-height: 15px
+		font-weight: 700
+		letter-spacing: 0.03em
+		text-transform: uppercase
+		padding-bottom: 41px
+		border-bottom: 1px solid rgba(255,255,255,.1)
+		margin-bottom: 38px
+
+		a
+			&:hover
+				opacity: 0.6
+	&__links
+		margin-left: -5px
+		margin-right: -5px
+	&__link
+		font-size: 13px
+		line-height: 16px
+		margin-bottom: 16px
+		padding-left: 5px
+		padding-right: 5px
+		&:last-of-type
+			margin-bottom: 0
+		a
+			opacity: 0.7
+			&:hover
+				opacity: 1
+
+
+@media screen and (max-width: 1210px)
+	.footer
+		background-color: #1A1B1F
+		.sscroll__section-inner
+			> .case
+				display: flex
+				flex-wrap: wrap
+		&__top
+			order: 2
+			display: block
+			width: 100%
+			padding-top: 35px
+			padding-bottom: 28px
+			background-color: $black
+			font-size: 13px
+			line-height: 16px
+			.case
+				display: flex
+				flex-wrap: wrap
+				&:after
+					content: ''
+					position: absolute
+					bottom: -28px
+					left: 32px
+					right: 32px
+					border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+		&__copy-hidden
+			width: 50%
+			opacity: 0.3
+		&__policy-hidden
+			width: 50%
+			a
+				&:hover
+					border-color: #fff
+			
+			
+		&__bot
+			order: 1
+			padding-top: 31px
+			padding-bottom: 31px
+		&__mid
+			order: 3
+		&__copy
+			display: none
+			
+
+	.f-nav
+		&__title
+			padding-bottom: 0
+			border-bottom: none
+			margin-bottom: 16px
+		&__list
+			flex-wrap: wrap
+			margin-bottom: -40px
+		&__item
+			width: 50%
+			margin-bottom: 40px
+		&__link
+			&.--policy
+				display: none
+
+
 @media screen and (max-width: 767px)
-	// .footer
-		
+	.footer
+		.sscroll__section-inner
+			padding-top: 60px
+			justify-content: flex-start
+			> .case
+				// flex-wrap: nowrap
+
+@media screen and (max-width: 650px)
+	.footer
+		.sscroll__section-inner
+			> .case
+				flex-wrap: nowrap
+		.section__inner
+			height: 100%
+		.section__inner > .case
+			display: flex
+			// flex-wrap: wrap
+			align-items: center
+			flex-direction: column
+			// overflow-y: auto
+		&__phone
+			margin-right: 0
+		&__btn-question
+			display: none
+		&__top
+			padding-top: 28px
+			.case
+				flex-direction: column
+		&__copy-hidden
+			width: 100%
+			margin-bottom: 18px
+		&__policy-hidden
+			width: 100%
+		&__mid
+			padding-top: 27px
+
+	.f-nav
+		&__list
+			margin-bottom: -22px
+		&__item
+			width: 100%
+			margin-bottom: 22px

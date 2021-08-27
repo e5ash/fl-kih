@@ -1,13 +1,300 @@
 @import ../../sass/vars
 
-// .header
+.header
+	z-index: 100
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	transition: $t
+	&:after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 50%
+		width: 100%
+		max-width: 1440px
+		transform: translateX(-50%)
+		transition: $t
+		border-bottom: 1px solid rgba(255,255,255,.3)
+	&.--scrolled
+		background-color: #fff
+		&:after
+			max-width: 100%
+			border-color: rgba(12%, 27%, 54%, 0.3)
+		.header
+			&__wrap
+				// border-color: rgba(12%, 27%, 54%, 0.3)
+			&__logo
+				path
+					&[fill*="white"]
+						fill: rgb(30, 70, 138)
+			&__phone
+				a
+					color: $blue
+			&__btn-consult
+				color: $black
+				&:hover
+					color: $blue
+				
+		.nav
+			&__item
+				color: $black
+				&:hover
+					opacity: .6
 
-@media screen and (max-width: 1220px)
-	// .header
+				
+	&__wrap
+		position: relative
+		align-items: center
+		height: 80px
+
+	&__logo
+		border-bottom: none
+		margin-right: 125px
+	&__ham
+		display: none
+	&__nav
+		margin-right: auto
+	&__phone
+		font-size: 13px
+		line-height: 16px
+		font-weight: 700
+		margin-right: 32px
+		a
+			color: #fff
+	&__btn-consult
+		font-size: 13px
+		line-height: 16px
+		font-weight: 500
+		letter-spacing: 0.03em
+		color: rgba(255,255,255,.6)
+		text-transform: uppercase
+		&:hover
+			color: #fff
 		
-@media screen and (max-width: 992px)
-	// .header
-		
+
+.nav
+	&__list
+		margin-left: -16px
+		margin-right: -16px
+	&__item
+		color: #fff
+		font-size: 13px
+		line-height: 16px
+		font-weight: 500
+		letter-spacing: 0.03em
+		margin-left: 16px
+		margin-right: 16px
+		text-transform: uppercase
+		&:hover
+			opacity: 0.5
+
+.sidenav
+	z-index: 5
+	width: 210px
+	position: fixed
+	top: 150px
+	left: 50%
+	margin-left: -720px
+	display: flex
+	flex-direction: column
+	padding-left: 23px
+	transition: $t
+	opacity: 0
+	visibility: hidden
+	&.--show
+		opacity: 1
+		visibility: visible
+	&:before
+		position: absolute
+		content: ''
+		left: 0
+		top: 0
+		bottom: 0
+		width: 1px
+		background-color: #BCC8CF
+	&__item
+		font-size: 16px
+		line-height: 24px
+		margin-bottom: 24px
+		position: relative
+		padding-right: 15px
+		&:before
+			content: ''
+			position: absolute
+			top: 50%
+			height: 0
+			left: -23px
+			width: 1px
+			transition: $t
+			background-color: $blue
+		&:last-of-type
+			margin-bottom: 0
+		&.--current
+			font-weight: 700
+			&:before
+				top: 0
+				height: 100%
+
+@media screen and (max-width: 1500px)
+	.header
+		&:after
+			left: 32px
+			right: 32px
+			width: auto
+			max-width: none
+			transform: none
+		&.--scrolled
+			&:after
+				left: 0
+				right: 0
+				max-width: none
+
+@media screen and (max-width: 1250px)
+	.header
+		&__logo
+			z-index: 2
+			margin-right: 75px
+			position: relative
+		&__ham
+			z-index: 2
+			position: relative
+			display: flex
+			align-items: center
+			justify-content: center
+			flex-direction: column
+			width: 32px
+			height: 32px
+			cursor: pointer
+			span
+				position: relative
+				display: block
+				width: 32px
+				height: 2px
+				background-color: #fff
+				margin-bottom: 5px
+				transition: $t
+				&:last-of-type
+					margin-bottom: 0
+			&.--toggle
+				span
+					&:nth-of-type(1)
+						top: 7px
+						transform: rotate(45deg)
+					&:nth-of-type(2)
+						opacity: 0
+					&:nth-of-type(3)
+						top: -7px
+						transform: rotate(-45deg)
+		&__phone
+			z-index: 2
+			position: relative
+			margin-left: auto
+
+		&.--scrolled
+			.header
+				&__ham
+					span
+						background-color: $blue
+					
+		&.--white
+			.header
+				&__logo
+					path
+						&[fill*="white"]
+							fill: #fff
+				&__ham
+					span
+						background-color: #fff
+				&__phone
+					a
+						color: #fff
+				&__btn-consult
+					color: rgba(255, 255, 255, 0.6)
+					&:hover
+						color: #fff
+				&__nav
+					.nav
+						&__item
+							color: #fff
+					
+	.nav
+		z-index: 1
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		display: flex
+		align-items: center
+		justify-content: center
+		background-color: $blue
+		padding-top: 80px
+		transition: $t
+		transform: translateY(120%)
+		&.--toggle
+			transform: translateY(0%)
+		&:before
+			content: ''
+			position: absolute
+			top: 80px
+			left: 0
+			right: 0
+			height: 1px
+			background-color: rgba(255,255,255,.2)
+		&__list
+			margin-left: 0
+			margin-right: 0
+			flex-direction: column
+		&__item
+			margin-left: 0
+			margin-right: 0
+			font-size: 28px
+			line-height: 32px
+			text-align: center
+			margin-bottom: 50px
+			&:last-of-type
+				margin-bottom: 0
+@media screen and (max-width: 1500px)
+	.sidenav
+		margin-left: 0
+		left: 32px
+@media screen and (max-width: 1023px)
+	.header
+		&__wrap
+			height: 60px
+		&__logo
+			width: 88px
+			svg
+				width: 100%
+				height: auto
+	
+	.nav
+		padding-top: 60px
+		&:before
+			top: 60px
+
+	.sidenav
+		display: none
+
 @media screen and (max-width: 767px)
-	// .header
-		
+	.header
+		&__logo
+			margin-right: 18px
+		&__phone
+			margin-right: 0
+		&__btn-consult
+			display: none
+
+	.nav
+		&__item
+			font-size: 24px
+			line-height: 24px
+			margin-bottom: 20px
+
+@media screen and (max-width: 330px)
+	.header
+		&:after
+			left: 15px
+			right: 15px

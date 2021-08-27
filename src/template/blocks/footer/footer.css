@@ -1,0 +1,229 @@
+.footer {
+  color: #fff;
+  z-index: 3;
+  position: relative;
+  min-height: 1px;
+}
+.footer a {
+  color: #fff;
+}
+.footer .section__inner {
+  padding-top: 0;
+  height: auto;
+}
+.footer .section__inner > .case {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 100%;
+}
+.footer .section__inner > .case .case {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.footer__top {
+  display: none;
+}
+.footer__mid {
+  width: 100%;
+  padding-top: 43px;
+  padding-bottom: 45px;
+  background-color: #1A1B1F;
+}
+.footer__bot {
+  width: 100%;
+  padding: 40px 0;
+  background-color: #313235;
+}
+.footer__bot-inner {
+  display: flex;
+  align-items: center;
+}
+.footer__copy {
+  margin-left: 250px;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  font-weight: 500;
+  max-width: 500px;
+}
+.footer__phone {
+  margin-left: auto;
+  margin-right: 40px;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.footer__btn-question {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+.footer__btn-question:hover {
+  opacity: 1;
+}
+
+.f-nav__list {
+  display: flex;
+}
+.f-nav__item {
+  width: 25%;
+}
+.f-nav__title {
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding-bottom: 41px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 38px;
+}
+.f-nav__title a:hover {
+  opacity: 0.6;
+}
+.f-nav__links {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.f-nav__link {
+  font-size: 13px;
+  line-height: 16px;
+  margin-bottom: 16px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.f-nav__link:last-of-type {
+  margin-bottom: 0;
+}
+.f-nav__link a {
+  opacity: 0.7;
+}
+.f-nav__link a:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 1210px) {
+  .footer {
+    background-color: #1A1B1F;
+  }
+  .footer .sscroll__section-inner > .case {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer__top {
+    order: 2;
+    display: block;
+    width: 100%;
+    padding-top: 35px;
+    padding-bottom: 28px;
+    background-color: #1A1B1F;
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .footer__top .case {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer__top .case:after {
+    content: "";
+    position: absolute;
+    bottom: -28px;
+    left: 32px;
+    right: 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .footer__copy-hidden {
+    width: 50%;
+    opacity: 0.3;
+  }
+  .footer__policy-hidden {
+    width: 50%;
+  }
+  .footer__policy-hidden a:hover {
+    border-color: #fff;
+  }
+  .footer__bot {
+    order: 1;
+    padding-top: 31px;
+    padding-bottom: 31px;
+  }
+  .footer__mid {
+    order: 3;
+  }
+  .footer__copy {
+    display: none;
+  }
+
+  .f-nav__title {
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-bottom: 16px;
+  }
+  .f-nav__list {
+    flex-wrap: wrap;
+    margin-bottom: -40px;
+  }
+  .f-nav__item {
+    width: 50%;
+    margin-bottom: 40px;
+  }
+  .f-nav__link.--policy {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer .sscroll__section-inner {
+    padding-top: 60px;
+    justify-content: flex-start;
+  }
+}
+@media screen and (max-width: 650px) {
+  .footer .sscroll__section-inner > .case {
+    flex-wrap: nowrap;
+  }
+  .footer .section__inner {
+    height: 100%;
+  }
+  .footer .section__inner > .case {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .footer__phone {
+    margin-right: 0;
+  }
+  .footer__btn-question {
+    display: none;
+  }
+  .footer__top {
+    padding-top: 28px;
+  }
+  .footer__top .case {
+    flex-direction: column;
+  }
+  .footer__copy-hidden {
+    width: 100%;
+    margin-bottom: 18px;
+  }
+  .footer__policy-hidden {
+    width: 100%;
+  }
+  .footer__mid {
+    padding-top: 27px;
+  }
+
+  .f-nav__list {
+    margin-bottom: -22px;
+  }
+  .f-nav__item {
+    width: 100%;
+    margin-bottom: 22px;
+  }
+}

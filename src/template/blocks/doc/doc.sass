@@ -1,13 +1,128 @@
 @import ../../sass/vars
 
-// .doc
+.doc
+	.section__inner
+		padding-top: 80px
+	&__wrap
+		padding-bottom: 60px
+	&__content
+		max-width: 700px
+		padding-top: 122px
+		margin-right: -85px
+		margin-left: 240px
+	&__texts
+		margin-top: 65px
+		grid: none / repeat(2, 1fr)
+		gap: 40px
+	&__text
+		font-size: 18px
+		line-height: 32px
+		font-weight: 300
+		h5
+			font-weight: 700
+			min-height: 32px
+			width: 100%
+			display: block
+			margin-bottom: 8px
+			
+	&__docs
+		width: 577px
 
-@media screen and (max-width: 1220px)
-	// .doc
-		
-@media screen and (max-width: 992px)
-	// .doc
-		
+	&.--reverse
+		.doc
+			&__icon
+				order: 1
+			&__content
+				order: 2
+				margin-left: 150px
+				margin-right: 0
+
+
+@media screen and (max-width: 1500px)
+	.doc
+		&__wrap
+			align-items: center
+			padding-bottom: 0
+		&__content
+			width: calc(100% - 435px)
+			margin-left: auto
+			margin-right: 0
+			padding-top: 0
+			padding-right: 60px
+		&__icon
+			margin-left: auto
+			width: 435px
+			height: 560px
+			picture
+				width: auto
+				height: 100%
+		&__texts
+			margin-top: 25px
+		&.--reverse
+			.doc
+				&__icon
+					margin-left: 0
+				&__content
+					margin-left: auto
+					margin-right: auto
+					padding-left: 60px
+					padding-right: 0
+
+
+@media screen and (max-width: 1100px)
+	.doc
+		&__icon
+			width: 350px
+			position: absolute
+			top: 0
+			right: 0
+			opacity: 0.6
+		&__content
+			width: 100%
+			max-width: 100%
+			padding-right: 0
+		&__title
+			padding-top: 73px
+			min-height: 351px
+			max-width: calc(100% - 350px + 90px)
+			margin-right: -90px
+		&__text
+			font-size: 16px
+			line-height: 24px
+		&.--reverse
+			.doc
+				&__content
+					padding-left: 0
+
 @media screen and (max-width: 767px)
-	// .doc
-		
+	.doc
+		.section__inner
+			padding-top: 60px
+		&__wrap
+			padding-bottom: 100px
+		&__icon
+			width: 280px
+			height: 363px
+			right: 50%
+			transform: translateX(50%)
+		&__title
+			max-width: 100%
+			min-height: 1px
+			margin-bottom: 12px
+			padding-top: 330px
+			
+@media screen and (max-width: 520px)
+	.doc
+		&__title
+			font-size: 20px
+			line-height: 25px
+			margin-right: 0
+		&__texts
+			grid: none / repeat(1, 1fr)
+			gap: 20px
+		&__text
+			h5
+				font-size: 18px
+				line-height: 32px
+				&:empty
+					display: none

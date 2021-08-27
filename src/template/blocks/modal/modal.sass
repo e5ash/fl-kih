@@ -1,0 +1,81 @@
+@import ../../sass/vars
+
+.modal
+	display: none
+	position: relative
+	background-color: #fff
+	&.--sm
+		padding: 32px
+		max-width: 855px
+		margin-left: auto
+		margin-right: auto
+	&__close
+		// border: 1px solid #fff
+		width: 50px
+		height: 50px
+		top: 0
+		right: 0
+		position: absolute
+		cursor: pointer
+		overflow: hidden
+		background-color: $blue
+		&:before, &:after
+			position: absolute
+			content: ''
+			top: 50%
+			left: 50%
+			width: 24px
+			height: 1px
+			margin-left: -12px
+			background-color: #fff
+			transition: $t
+		&:before
+			transform: rotate(45deg)
+		&:after
+			transform: rotate(-45deg)
+		&:hover
+			&:before, &:after
+				transform: rotate(0deg)
+	&__title
+		margin-bottom: 27px
+		padding-right: 30px
+	&__form
+		margin-left: -12px
+		margin-right: -12px
+	&__field
+		margin-bottom: 24px
+		margin-left: 12px
+		margin-right: 12px
+		&.--input
+			width: calc(100% / 2 - 24px)
+		&.--textarea
+			width: calc(100% - 24px)
+	&__foot
+		margin-left: 12px
+		margin-right: 12px
+		width: calc(100% - 24px)
+	&__check
+		width: 100%
+		max-width: 540px
+	&__btn-send
+		margin-left: auto
+
+@media screen and (max-width: 767px)
+	.modal
+		&__field
+			&.--input
+				width: calc(100% - 24px)
+		
+		&__title
+			font-size: 24px
+			line-height: 29px
+			padding-right: 10px
+		&__foot
+			flex-direction: column
+		&__check
+			max-width: 100%
+		&__btn-send
+			width: 100%
+			max-width: 100%
+			margin-left: 0
+			margin-top: 14px

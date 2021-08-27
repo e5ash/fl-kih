@@ -1,13 +1,65 @@
 @import ../../sass/vars
 
-// .certificates
+.certificates
+	.section__inner
+		padding-top: 80px
+	&__desc
+		color: $blue
+		margin-bottom: 37px
+	&__head
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-end
+		margin-bottom: 61px
+	&__title
+		max-width: 1070px
+	&__controls
+		// df
+		margin-left: auto
+	&__wrap
+		position: relative
+		&:before
+			z-index: 10
+			content: ''
+			position: absolute
+			top: -10px
+			left: -100%
+			bottom: -10px
+			width: 100%
+			background-color: #fff
+		&.swiper-container
+			overflow: visible
+	&__item
+		overflow: hidden
+		border: 1px solid #BCC8CF
+		cursor: pointer
+		// height: 468px
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+			transition: $t
+		&:hover
+			img
+				transform: scale(1.03)
+		
 
-@media screen and (max-width: 1220px)
-	// .certificates
-		
-@media screen and (max-width: 992px)
-	// .certificates
-		
-@media screen and (max-width: 767px)
-	// .certificates
-		
+@media screen and (max-height: 850px)
+	.certificates
+		&__desc
+			margin-bottom: 20px
+		&__head
+			margin-bottom: 30px
+
+@media screen and (max-width: 1385px)
+	.certificates
+		&__title
+			max-width: 1160px
+
+@media screen and (max-width: 950px)
+	.certificates
+		&__head
+			flex-direction: column
+		&__controls
+			margin-top: 15px
+			

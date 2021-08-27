@@ -62,3 +62,11 @@ include ../../blocks/feedback/feedback
 +style('faq', 'blocks')
 include ../../blocks/faq/faq
 
+//- intro 
++style('intro', 'blocks')
+include ../../blocks/intro/intro
+
+//- modal 
++style('modal', 'blocks')
+include ../../blocks/modal/modal
+

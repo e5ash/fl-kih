@@ -1,0 +1,165 @@
+.solus .section__inner {
+  padding-top: 150px;
+  padding-bottom: 80px;
+}
+.solus__inner {
+  max-width: 946px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 80px;
+}
+.solus__text {
+  font-size: 48px;
+  line-height: 56px;
+  margin-bottom: 77px;
+}
+.solus__item {
+  display: block;
+  position: relative;
+  height: 408px;
+  padding: 53px 56px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+.solus__item:hover .solus__name {
+  transform: translateX(15px);
+}
+.solus__item:last-of-type {
+  margin-bottom: 0;
+}
+.solus__item.--sed .solus__icon {
+  top: 56px;
+  right: -40px;
+  height: 600px;
+}
+.solus__item.--transport .solus__icon {
+  top: 56px;
+  right: -40px;
+  height: 408px;
+}
+.solus__item.--taxi .solus__icon {
+  top: 24px;
+  right: 31px;
+  width: 421px;
+  height: 392px;
+}
+.solus__item.--citizen .solus__icon {
+  top: 40px;
+  right: 49px;
+  width: 403px;
+  height: 327px;
+}
+.solus__item.--gbo .solus__icon {
+  top: 56px;
+  right: -40px;
+  height: 600px;
+}
+.solus__item.--monitorig .solus__icon {
+  top: 56px;
+  right: -40px;
+  height: 600px;
+}
+.solus__name {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  max-width: 400px;
+  color: #fff;
+  transition: 0.5s;
+}
+.solus__icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 495px;
+}
+
+@media screen and (max-width: 1200px) {
+  .solus .section__inner {
+    padding-top: 120px;
+  }
+  .solus__text {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 60px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .solus__item {
+    height: 305px;
+    margin-bottom: 16px;
+  }
+  .solus__item.--taxi .solus__icon {
+    width: 309px;
+    height: 288px;
+    margin-right: 35px;
+  }
+  .solus__item.--citizen .solus__icon {
+    width: 285px;
+    height: 232px;
+  }
+  .solus__icon {
+    width: 365px;
+  }
+  .solus__name {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .solus .section__inner {
+    padding-top: 80px;
+  }
+  .solus__text {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 30px;
+  }
+  .solus__inner {
+    padding-bottom: 60px;
+  }
+  .solus__text {
+    margin-bottom: 35px;
+  }
+  .solus__list {
+    display: grid;
+    grid: none/repeat(1, 1fr);
+  }
+  .solus__item {
+    padding: 30px 10px 10px 30px;
+    height: 300px;
+    margin-bottom: 10px;
+  }
+  .solus__item.--sed .solus__icon, .solus__item.--transport .solus__icon, .solus__item.--taxi .solus__icon, .solus__item.--citizen .solus__icon, .solus__item.--gbo .solus__icon, .solus__item.--monitorig .solus__icon {
+    top: 100px;
+    right: 50%;
+  }
+  .solus__item.--taxi .solus__icon {
+    width: 257px;
+    height: 240px;
+    margin-right: 0;
+    margin-top: -35px;
+  }
+  .solus__item.--citizen .solus__icon {
+    width: 243px;
+    height: 198px;
+    margin-top: -15px;
+    margin-right: -30px;
+  }
+  .solus__item.--sed .solus__icon, .solus__item.--transport .solus__icon, .solus__item.--gbo .solus__icon, .solus__item.--monitorig .solus__icon {
+    margin-right: -25px;
+  }
+  .solus__item:hover .solus__name {
+    transform: none;
+  }
+  .solus__icon {
+    width: 290px;
+    right: 50%;
+    top: 100px;
+    transform: translateX(50%);
+  }
+  .solus__name {
+    font-size: 20px;
+    line-height: 25px;
+  }
+}

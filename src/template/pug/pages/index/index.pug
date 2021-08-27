@@ -18,18 +18,38 @@ block content
 		.intro__pluses.pluses
 			picture
 				img(src="uploads/pluses.svg" alt="")
-		.intro__bg.bg
-			picture
-				img(src="uploads/intro-1.jpg" alt="")
+		.intro__bgs
+			.intro__bgs-wrap.swiper-container
+				.intro__bgs-list.swiper-wrapper
+					.intro__bgs-item.swiper-slide
+						picture
+							img(src="uploads/intro-1.jpg" alt="")
+					.intro__bgs-item.swiper-slide
+						picture
+							img(src="uploads/intro-2.jpg" alt="")
+					.intro__bgs-item.swiper-slide
+						picture
+							img(src="uploads/intro-3.jpg" alt="")
+					.intro__bgs-item.swiper-slide
+						picture
+							img(src="uploads/intro-4.jpg" alt="")
+					.intro__bgs-item.swiper-slide
+						picture
+							img(src="uploads/intro-5.jpg" alt="")
+					.intro__bgs-item.swiper-slide
+						picture
+							img(src="uploads/intro-6.jpg" alt="")
+		+style('intro', 'blocks')
+		+script('intro', 'blocks')
 
-	//- include ../../../blocks/solutions/solutions
+	include ../../../blocks/solutions/solutions
 
-	//- include ../../../blocks/philosophy/philosophy
+	include ../../../blocks/philosophy/philosophy
 	
-	//- include ../../../blocks/mission/mission
+	include ../../../blocks/mission/mission
 
-	//- include ../../../blocks/timeline/timeline
+	include ../../../blocks/timeline/timeline
 
-	//- include ../../../blocks/certificates/certificates
+	include ../../../blocks/certificates/certificates
 
-	//- include ../../../blocks/footer/footer
+	include ../../../blocks/footer/footer

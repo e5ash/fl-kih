@@ -1,0 +1,339 @@
+.philosophy {
+  position: relative;
+}
+.philosophy.--current {
+  z-index: 5;
+}
+.philosophy .section__inner {
+  padding-top: 150px;
+}
+.philosophy__inner {
+  padding-bottom: 100px;
+}
+.philosophy__desc {
+  margin-bottom: 37px;
+}
+.philosophy__title {
+  margin-bottom: 60px;
+}
+.philosophy__list {
+  grid: none/repeat(4, 1fr);
+  gap: 49px;
+}
+.philosophy__bg:before {
+  opacity: 0.4;
+  content: "";
+  background: #000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  position: absolute;
+}
+
+.phi {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  height: 323px;
+  padding: 100px 40px 35px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.phi:before {
+  z-index: -6;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s;
+  background-color: #1E468A;
+}
+.phi__box {
+  border: 1px solid #fff;
+  width: 40px;
+  height: 40px;
+  top: 40px;
+  left: 40px;
+  position: absolute;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.phi__box span {
+  position: absolute;
+  width: 17px;
+  height: 1px;
+  background-color: #fff;
+  opacity: 0;
+  transition: 0.3s;
+}
+.phi__box span:nth-of-type(1), .phi__box span:nth-of-type(2) {
+  opacity: 1;
+}
+.phi__box span:nth-of-type(1) {
+  bottom: 12.5px;
+  left: 11px;
+  transform: rotate(-45deg);
+}
+.phi__box span:nth-of-type(2) {
+  top: 12.5px;
+  left: 11px;
+  transform: rotate(45deg);
+}
+.phi__box span:nth-of-type(3), .phi__box span:nth-of-type(4) {
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  margin-left: -12px;
+  transition-delay: 0;
+}
+.phi__box span:nth-of-type(3) {
+  transform: scale(0) rotate(-45deg);
+}
+.phi__box span:nth-of-type(4) {
+  transform: scale(0) rotate(45deg);
+}
+.phi__box:hover {
+  opacity: 0.6;
+}
+.phi__content {
+  transition: 0.3s;
+  margin-top: auto;
+}
+.phi__desc {
+  opacity: 0;
+  margin-top: 0;
+  transition: 0.3s;
+}
+.phi__text {
+  display: none;
+}
+.phi .lines__line {
+  opacity: 0;
+  transition: 0.3s;
+}
+.phi .lines__bg {
+  opacity: 0;
+  transition: 0.3s;
+  left: 0 !important;
+  transform: none !important;
+}
+.phi.--show {
+  border-color: transparent;
+}
+.phi.--show:before {
+  opacity: 1;
+}
+.phi.--show .phi__box span:nth-of-type(1), .phi.--show .phi__box span:nth-of-type(2) {
+  margin-left: 30px;
+}
+.phi.--show .phi__box span:nth-of-type(3), .phi.--show .phi__box span:nth-of-type(4) {
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+.phi.--show .phi__box span:nth-of-type(3) {
+  transform: scale(1) rotate(-45deg);
+}
+.phi.--show .phi__box span:nth-of-type(4) {
+  transform: scale(1) rotate(45deg);
+}
+.phi.--show .phi__content {
+  transform: translateY(0px);
+}
+.phi.--show .phi__desc {
+  opacity: 0.7;
+  margin-top: 10px;
+}
+.phi.--show .lines__line {
+  opacity: 1;
+}
+.phi.--show .lines__bg {
+  opacity: 0.4;
+}
+
+.phy-info {
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  opacity: 1;
+  position: fixed;
+  top: 80px;
+  right: 0;
+  bottom: 0;
+  width: 530px;
+  transition: 0.3s;
+  background-color: #fff;
+  transform: translateX(100%);
+  border-left: 80px solid #1E468A;
+}
+.phy-info.--show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.phy-info__close {
+  border: 1px solid #fff;
+  width: 40px;
+  height: 40px;
+  top: 40px;
+  left: -60px;
+  position: absolute;
+  cursor: pointer;
+  overflow: hidden;
+}
+.phy-info__close:before, .phy-info__close:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 1px;
+  margin-left: -12px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+.phy-info__close:before {
+  transform: rotate(45deg);
+}
+.phy-info__close:after {
+  transform: rotate(-45deg);
+}
+.phy-info__close:hover:before, .phy-info__close:hover:after {
+  transform: rotate(0deg);
+}
+.phy-info__inner {
+  padding: 40px 40px 40px 40px;
+}
+.phy-info__title {
+  color: #1A1B1F;
+  margin-bottom: 42px;
+}
+.phy-info__text {
+  color: #1A1B1F;
+}
+
+@media screen and (max-height: 900px) {
+  .philosophy__inner {
+    padding-bottom: 120px;
+  }
+  .philosophy__title {
+    margin-bottom: 45px;
+  }
+}
+@media screen and (max-width: 1450px) {
+  .philosophy__list {
+    gap: 24px;
+  }
+}
+@media screen and (max-width: 1380px) {
+  .phi__name {
+    font-size: 21px;
+    line-height: 25px;
+  }
+}
+@media screen and (max-width: 1260px) {
+  .phi {
+    padding: 100px 24px 24px;
+    height: 262px;
+  }
+  .phi__box {
+    width: 32px;
+    height: 32px;
+    left: 24px;
+    top: 24px;
+  }
+  .phi__box span {
+    width: 8px;
+  }
+  .phi__box span:nth-of-type(1) {
+    bottom: 11.5px;
+    left: 11px;
+  }
+  .phi__box span:nth-of-type(2) {
+    top: 11.5px;
+    left: 11px;
+  }
+  .phi.--show .phi__box span:nth-of-type(3), .phi.--show .phi__box span:nth-of-type(4) {
+    width: 16px;
+    margin-left: -8px;
+  }
+
+  .phy-info {
+    width: 400px;
+  }
+  .phy-info__inner {
+    padding: 25px;
+  }
+  .phy-info__title {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 1180px) {
+  .phi__desc {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .phi__name {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .philosophy .section__inner {
+    padding-top: 100px;
+  }
+  .philosophy__list {
+    grid: none/repeat(3, 1fr);
+  }
+
+  .phy-info {
+    top: 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .phi {
+    height: 230px;
+  }
+}
+@media screen and (max-width: 730px) {
+  .philosophy__inner {
+    padding-bottom: 50px;
+  }
+  .philosophy__desc {
+    margin-bottom: 18px;
+  }
+  .philosophy__title {
+    margin-bottom: 24px;
+  }
+  .philosophy__list {
+    grid: none/repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 590px) {
+  .philosophy__list {
+    grid: none/repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 400px) {
+  .phy-info {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .phy-info__close {
+    background-color: #1E468A;
+    left: 0;
+    top: -1px;
+    width: 40px;
+    height: 40px;
+    border: none;
+  }
+}

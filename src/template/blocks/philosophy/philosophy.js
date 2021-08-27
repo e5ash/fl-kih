@@ -17,16 +17,34 @@ if (philosophy) {
 			el.content.style.transform = 'translateY(' + el.desc.offsetHeight + 'px)';
 		});
 	});
+
+	document.addEventListener('resize', ()=>{
+		phyItems.forEach((el)=>{
+			if (el == item) {
+				return false;
+			}
+
+			if (el.classList.contains(phyClassShow)) {
+				// item.lines.stopLines();
+				el.content.style.transform = 'translateY(' + 0 + 'px)';
+				// el.content.style.transform = 'translateY(' + 0 + 'px)';
+			} else {
+				el.content.style.transform = 'translateY(' + el.desc.offsetHeight + 'px)';
+			}
+			
+		});
+	});
+
 	phyItems.forEach((item)=>{
 		item.box = item.querySelector('.phi__box');
-		item.title = item.querySelector('.phi__name').innerText;
+		item.titleus = item.querySelector('.phi__name').innerText;
 		item.content = item.querySelector('.phi__content'),
 		item.desc = item.querySelector('.phi__desc'),
 		item.text = item.querySelector('.phi__text').innerHTML;
 
 		item.content.style.transform = 'translateY(' + item.desc.offsetHeight + 'px)';
 
-		item.box.addEventListener('click', ()=>{
+		item.addEventListener('click', (event)=>{
 			item.classList.toggle(phyClassShow);
 				
 			if (item.classList.contains(phyClassShow)) {
@@ -36,10 +54,10 @@ if (philosophy) {
 			} else {
 				phyInfo.block.classList.remove(phyClassShow);
 				item.content.style.transform = 'translateY(' + item.desc.offsetHeight + 'px)';
-				item.lines.stopLines();
+				// item.lines.stopLines();
 			}
 
-			phyInfo.title.innerText = item.title;
+			phyInfo.title.innerText = item.titleus;
 			phyInfo.text.innerHTML = item.text;
 
 			phyItems.forEach((el)=>{
@@ -48,7 +66,7 @@ if (philosophy) {
 				}
 
 				if (item.classList.contains(phyClassShow)) {
-					item.lines.stopLines();
+					// item.lines.stopLines();
 					el.classList.remove(phyClassShow);
 					el.content.style.transform = 'translateY(' + el.desc.offsetHeight + 'px)';
 					// el.content.style.transform = 'translateY(' + 0 + 'px)';

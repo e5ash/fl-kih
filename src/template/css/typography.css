@@ -87,3 +87,43 @@
 .upper {
   text-transform: uppercase;
 }
+
+@media screen and (max-height: 800px) {
+  .h1 {
+    font-size: 72px;
+    line-height: 78px;
+    min-height: 156px;
+  }
+
+  .h2 {
+    font-size: 42px;
+    line-height: 50px;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .h1 {
+    font-size: 64px;
+    line-height: 64px;
+  }
+
+  .h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .h1 {
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  .h2 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .h6 {
+    font-size: 12px;
+    line-height: 24px;
+  }
+}

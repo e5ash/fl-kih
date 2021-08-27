@@ -46,6 +46,20 @@
 .button.--b-white:hover:after {
   background-color: #1E468A;
 }
+.button.--b-blue {
+  color: #1E468A;
+  border: 1px solid #1E468A;
+}
+.button.--b-blue:after {
+  background-color: #1E468A;
+}
+.button.--b-blue:hover {
+  color: #fff;
+  background-color: #1E468A;
+}
+.button.--b-blue:hover:after {
+  background-color: #fff;
+}
 .button.--bg-transparent {
   background-color: transparent;
 }
@@ -98,4 +112,20 @@
   left: 16px;
   right: 16px;
   bottom: 8px;
+}
+
+@media screen and (max-width: 1023px) {
+  .button.--lg, .button.--md {
+    font-size: 12px;
+    min-height: 56px;
+  }
+  .button.--lg:after, .button.--md:after {
+    bottom: 6px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .button.--lg, .button.--md {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

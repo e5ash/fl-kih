@@ -1,13 +1,148 @@
 @import ../../sass/vars
 
-// .mission
+.mission
+	// padding-top: 80px
+	&__wrap
+		// padding-bottom: 80px
+	&__content
+		width: 580px
+	&__btn-more
+		display: none
+	&__quote
+		width: 330px
+		margin-left: auto
+		position: relative
+		margin-right: 245px
 
-@media screen and (max-width: 1220px)
-	// .mission
-		
-@media screen and (max-width: 992px)
-	// .mission
-		
+
+.quote
+	&__text
+		position: relative
+		&:before
+			content: '<'
+			font-size: 32px
+			line-height: 16px
+			color: $black
+			position: absolute
+			top: 7px
+			left: -40px
+		&:after
+			content: '/>'
+			font-size: 32px
+			line-height: 32px
+			color: $black
+			position: absolute
+			right: -43px
+			bottom: 26px
+		p
+			opacity: .7
+	&__author
+		margin-top: 34px
+
+
+.q-author
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	&__img
+		width: 84px
+		height: 84px
+		border-radius: 50%
+	&__text
+		width: calc(100% - 84px)
+		padding-left: 40px
+	&__name
+		font-size: 16px
+		line-height: 24px
+		font-weight: 700
+		margin-bottom: 6px
+	&__desc
+		font-size: 12px
+		line-height: 16px
+		opacity: 0.5
+		max-width: 140px
+
+@media screen and (max-height: 600px)
+	.mission
+		.section__inner
+			padding-top: 120px
+		&__wrap
+			padding-bottom: 40px
+
+@media screen and (max-width: 1350px)
+	.mission
+		&__quote
+			margin-right: 130px
+			
+
+@media screen and (max-width: 1145px)
+	.mission
+		&__quote
+			margin-right: 50px
+
+	.quote
+		&__text
+			&:after
+				bottom: 0
+			
+
+@media screen and (max-width: 1023px)
+	.mission
+		&__content
+			max-width: 500px
+			
+		&__quote
+			margin-right: 50px
+
+
+
+@media screen and (max-width: 950px)
+	.mission
+		.section__inner
+			padding-top: 100px
+		&__wrap
+			padding-bottom: 70px
+		&__content
+			width: 100%
+			max-width: 100%
+		&__title
+			margin-bottom: 32px
+		&__btn-more
+			display: flex
+			
+		&__quote
+			width: 100%
+			margin-right: 50px
+			padding-left: 40px
+			margin-top: 45px
+
+
+	.quote
+		&__text
+			&:after
+				bottom: 22px
+		&__author
+			margin-top: 24px
+
+
 @media screen and (max-width: 767px)
-	// .mission
-		
+	.quote
+		padding-left: 27px
+		&__text
+			&:before, &:after
+				font-size: 16px
+				line-height: 20px
+			&:before
+				top: 0
+				left: -27px
+			&:after
+				right: -27px
+				bottom: 0
+
+	.q-author
+		&__img
+			width: 80px
+			height: 80px
+		&__text
+			width: calc(100% - 80px)
+			padding-left: 24px

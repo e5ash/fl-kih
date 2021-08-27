@@ -48,12 +48,12 @@ class Sscroll {
 			// set default fields
 			section.classList.add(this.settings.class.section);
 			
-			if (!section.classList.contains(Sscroll.classHeightAuto)) {
+			if (!section.classList.contains(Sscroll.classHeightAuto) || window.body.offsetWidth <= 767) {
 				section.style.height = window.innerHeight + 'px';
 			}
 
 			section.inner = section.querySelector('.section__inner');
-			section.inner.classList.add(this.settings.class.sectionInner)
+			section.inner.classList.add(this.settings.class.sectionInner);
 			
 			// nav
 			if (this.nav) {
@@ -82,6 +82,7 @@ class Sscroll {
 			section.inner.addEventListener('scroll', (event)=>{
 				this.event.scroll = true;
 
+
 				if (this.goto) {
 					this.event.scroll = false;
 					return false;
@@ -93,7 +94,7 @@ class Sscroll {
 				
 				section.inner.scrollEnd = Math.ceil(section.inner.scrollTop + section.inner.clientHeight);
 				// this.alert.innerHTML = `section.inner.scrollEnd: ${section.inner.scrollEnd}<br> section.inner.scrollTop: ${section.inner.scrollTop}<br> section.inner.scrollHeight: ${section.inner.scrollHeight}<br> move: ${this.isMoved}`;
-				if (section.inner.clientHeight < section.inner.scrollHeight) {
+				if (section.inner.clientHeight <= section.inner.scrollHeight) {
 					if (section.inner.scrollTop == 0) {
 						this.movePrev();
 					} else if(section.inner.scrollEnd >= section.inner.scrollHeight){
@@ -106,13 +107,17 @@ class Sscroll {
 			section.inner.addEventListener('wheel', (event)=>{
 				this.event.wheel = true;
 
-				if (event.ctrlKey || this.goto) {
-					this.event.wheel = false;
-					return false;
-				}
+				if (!section.classList.contains(Sscroll.classHeightAuto)) {
+					if (event.ctrlKey || this.goto) {
+						this.event.wheel = false;
+						return false;
+					}
 
-				if (this.isMoved) {
-					return false;
+					if (this.isMoved) {
+						return false;
+					}
+				} else {
+					this.goto = this.isMoved = false;
 				}
 
 				section.inner.scrollEnd = Math.ceil(section.inner.scrollTop + section.inner.clientHeight);
@@ -145,7 +150,9 @@ class Sscroll {
 					return false;
 				}
 
-				if (section.inner.clientHeight < section.inner.scrollHeight) {
+				
+				if (section.inner.clientHeight <= section.inner.scrollHeight) {
+
 					if (section.inner.scrollTop == 0 && event.deltaY < 0) {
 						this.movePrev();
 					} else if(section.inner.scrollEnd >= section.inner.scrollHeight && event.deltaY > 0){
@@ -178,13 +185,18 @@ class Sscroll {
 				this.touchY = this.touchStartY - this.touchEndY;
 				this.touchX = this.touchStartX - this.touchEndX;
 
-				if (this.isMoved) {
-					// return false;
-				}
+				if (!section.classList.contains(Sscroll.classHeightAuto)) {
+					if (this.isMoved) {
+						// return false;
+					}
 
-				if (this.goto) {
-					this.event.touch = false;
-					return false;
+					if (this.goto) {
+						this.event.touch = false;
+						return false;
+					}
+
+				} else {
+					this.goto = this.isMoved = false;
 				}
 
 				if (event.target.closest('.noUi-target') || event.target.closest('.tabs__nav') || event.target.closest('.wheel-false')) {
@@ -201,6 +213,35 @@ class Sscroll {
 				}
 
 				section.inner.scrollEnd = Math.ceil(section.inner.scrollTop + section.inner.clientHeight);
+				// this.alert.innerHTML = `section.inner.scrollEnd: ${section.inner.scrollEnd}<br> section.inner.scrollTop: ${section.inner.scrollTop}<br> section.inner.scrollHeight: ${section.inner.scrollHeight}<br> move: ${this.isMoved}`;
+					
+				if (section.classList.contains('timeline')) {
+
+					let timeline = section.timeline,
+							length   = timeline.value.length,
+							current  = timeline.value.current;
+
+					if (current == 0 && this.touchY < 0) {
+						this.movePrev(section);
+
+					} else if(current == length - 1 && this.touchY > 0) {
+						this.moveNext(section);
+					} else {
+						let el = null;
+
+						if (this.touchY < 0) {
+							timeline.skip.setAttribute('data-prev', 'true');
+							el = timeline.items[current - 1];
+						} else if (this.touchY > 0) {
+							timeline.skip.removeAttribute('data-prev');
+							el = timeline.items[current + 1];
+						}
+
+						timeline.changeItem(el);
+					}
+					return false;
+				}
+
 				if (section.inner.clientHeight != section.inner.scrollHeight) {
 					if (section.inner.scrollTop == 0 && this.touchY < 0) {
 						this.movePrev();
@@ -232,6 +273,10 @@ class Sscroll {
 		this.currentSection.classList.add(Sscroll.classCurrent);
 		if (this.currentLink) {
 			this.currentLink.classList.add(Sscroll.classCurrent);
+		}
+
+		if (this.currentSection.lines) {
+			this.currentSection.lines.startLines();
 		}
 
 
@@ -268,8 +313,15 @@ class Sscroll {
 		let speed = this.event == 'touch' ? 35 : 300;
 		let speedStep = +(scrollSize / speed * intervalSpeed);
 		let interval = null;
-			
 
+
+		if (section.classList.contains('footer')) {
+			window.scrollTo(0, sTop);
+
+			this.goto = false;
+
+			return false;
+		}
 		if (wY > sTop) {
 			interval = setInterval(()=>{
 				if (window.pageYOffset <= sTop) {
@@ -308,6 +360,15 @@ class Sscroll {
 	changeHeight() {
 		this.sections.forEach((section)=>{
 			section.style.height = window.innerHeight + 'px';
+
+			if (section.classList.contains(Sscroll.classHeightAuto)) {
+				if (window.body.offsetWidth <= 767) {
+					section.style.height = window.innerHeight + 'px';
+				} else {
+					section.removeAttribute('style');
+				}
+			}
+			
 		});
 	}
 
@@ -328,6 +389,15 @@ class Sscroll {
 		setTimeout(()=>{
 			this.isMoved = false;
 		}, 900);
+
+		let phyInfo = document.querySelector('.phy-info'),
+				phyItems = document.querySelectorAll('.philosophy__item');
+		if (phyInfo) {
+			phyInfo.classList.remove('--show');
+			phyItems.forEach((phyItem)=>{
+				phyItem.classList.remove('--show');
+			})
+		}
 
 		let position = null;
 
@@ -392,6 +462,9 @@ class Sscroll {
 
 	prev() {
 		let el = this.currentSection.previousSibling;
+		if (!el) {
+			return false;
+		}
 		if (!el.classList && !el.classList.contains('section')) {
 			el = el.previousSibling;
 		}
@@ -401,7 +474,9 @@ class Sscroll {
 
 	next() {
 		let el = this.currentSection.nextSibling;
-
+		if (!el) {
+			return false;
+		}
 		if (!el.classList && !el.classList.contains('section')) {
 			el = el.nextSibling;
 		}

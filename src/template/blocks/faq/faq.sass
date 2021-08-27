@@ -1,13 +1,121 @@
 @import ../../sass/vars
 
-// .faq
+.faq
+	padding-top: 140px
+	margin-top: -80px
+	width: 100%
+	max-width: 855px
+	margin-left: auto
+	margin-right: auto
+	&__title
+		margin-bottom: 45px
+	&__item
+		margin-bottom: 16px
+		&:last-of-type
+			margin-bottom: 0
 
-@media screen and (max-width: 1220px)
-	// .faq
-		
-@media screen and (max-width: 992px)
-	// .faq
-		
+.f-item
+	border: 1px solid rgba(188, 200, 207, 0.5)
+	&.--open
+		.f-item
+			&__name
+				color: $black
+			&__icon
+				&:after
+					transform: rotate(180deg)
+			&__body
+				max-height: 100%
+				padding-bottom: 32px
+				margin-top: -10px
+	&__head
+		display: flex
+		align-items: center
+		cursor: pointer
+		padding: 24px 32px
+	&__name
+		font-size: 20px
+		line-height: 32px
+		font-weight: 700
+		color: $blue
+		width: calc(100% - 40px)
+		padding-right: 30px
+		transition: $t
+	&__icon
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		width: 40px
+		height: 40px
+		&:before, &:after
+			content: ''
+			width: 40px
+			height: 2px
+			transition: $t
+			background-color: $blue
+		&:after
+			transform: rotate(90deg)
+			margin-top: -2px
+	&__body
+		padding: 0 32px
+		height: 0
+		overflow: hidden
+		transition: height $t, margin-top $t
+	&__text
+		line-height: 24px
+		opacity: 0.7
+
+@media screen and (max-width: 1500px)
+	.faq
+		max-width: 630px
+		margin-left: auto
+		position: relative
+		left: 30px
+		&__title
+			margin-bottom: 30px
+
+	.f-item
+		&__name
+			font-size: 18px
+			line-height: 25px
+			width: calc(100% - 30px)
+		&__icon
+			width: 30px
+			height: 30px
+			&:before, &:after
+				width: 30px
+
+@media screen and (max-width: 1023px)
+	.faq
+		left: 0
+
+
 @media screen and (max-width: 767px)
-	// .faq
-		
+	.faq
+		&__title
+			font-size: 24px
+			line-height: 29px
+			padding-right: 10px
+
+	.f-item
+		&__head
+			padding: 13px
+		&__name
+			font-size: 16px
+			line-height: 23px
+		&__icon
+			width: 24px
+			height: 24px
+			&:before, &:after
+				width: 24px
+		&__body
+			padding: 0 13px
+		&.--open
+			.f-item
+				&__body
+					font-size: 16px
+					line-height: 23px
+					margin-top: 0
+					padding-bottom: 20px
+
+	

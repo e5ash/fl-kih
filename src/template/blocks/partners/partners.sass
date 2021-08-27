@@ -1,13 +1,89 @@
 @import ../../sass/vars
 
-// .partners
+.partners
+	// padding-top: 100px
+	&__inner
+		// padding-bottom: 80px
+	&__pluses
+		z-index: -1
+		position: absolute
+		top: -116px
+		right: 50%
+		width: 609px
+	&__title
+		text-align: center
+		margin-bottom: 68px
+	&__list
+		grid: none / repeat(4, 1fr)
+		gap: 45px 40px
+	&__logo
+		display: flex
+		align-items: center
+		justify-content: center
+		height: 80px
+		picture
+			display: flex
+			align-items: center
+			justify-content: center
+			width: 100%
+			height: 100%
+		img
+			margin-left: auto
+			margin-right: auto
+	&__name
+		font-size: 14px
+		line-height: 20px
+		text-align: center
+		width: 100%
+		max-width: 207px
+		margin-left: auto
+		margin-right: auto
+		&:before
+			display: block
+			content: ''
+			width: 24px
+			height: 1px
+			background-color: $black
+			margin: 23px auto 17px
 
-@media screen and (max-width: 1220px)
-	// .partners
 		
-@media screen and (max-width: 992px)
-	// .partners
-		
-@media screen and (max-width: 767px)
-	// .partners
-		
+@media screen and (max-height: 845px)
+	.partners
+		&__title
+			margin-bottom: 35px
+
+
+@media screen and (max-width: 1245px)
+	.partners
+		&__pluses
+			width: 433px
+			margin-right: -600px
+		&__list
+			gap: 30px
+		&__name
+			&:before
+				margin-top: 12px
+				margin-bottom: 9px
+
+@media screen and (max-height: 720px)
+	.partners
+		.section__inner
+			padding-top: 120px
+		&__inner
+			padding-bottom: 80px
+
+@media screen and (max-width: 900px)
+	.partners
+		&__list
+			grid: none / repeat(3, 1fr)
+			gap: 40px 30px
+
+@media screen and (max-width: 580px)
+	.partners
+		.section__inner
+			padding-top: 100px
+		&__inner
+			padding-bottom: 60px
+		&__list
+			grid: none / repeat(2, 1fr)
+			gap: 25px

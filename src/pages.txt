@@ -1,12 +1,11 @@
-http://localhost:3000/index.html
-http://localhost:3000/index-2.html
-http://localhost:3000/index-3.html
-http://localhost:3000/index-4.html
-http://localhost:3000/index-5.html
-http://localhost:3000/index-6.html
+http://e5ash.com/kih/index.html
+http://e5ash.com/kih/integrating.html
+http://e5ash.com/kih/solutions.html
+http://e5ash.com/kih/contacts.html
 
-http://localhost:3000/integrating.html
-http://localhost:3000/solutions.html
-http://localhost:3000/contacts.html
-
-http://localhost:3000/sed.html
+http://e5ash.com/kih/sed.html
+http://e5ash.com/kih/transport.html
+http://e5ash.com/kih/citizen.html
+http://e5ash.com/kih/transport.html
+http://e5ash.com/kih/taxi.html
+http://e5ash.com/kih/monitoring.html

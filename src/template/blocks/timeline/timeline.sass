@@ -1,13 +1,280 @@
 @import ../../sass/vars
 
-// .timeline
+.timeline
+	position: relative
+	// padding-top: 180px
+	overflow: hidden
+	.section__inner
+		position: relative
+		padding-top: 0
+		padding-bottom: 0
+		overflow: hidden
+	.case
+		position: static
+	&__inner
+		padding-top: 180px
+	&__date
+		z-index: 5
+		position: relative
+		margin-bottom: 95px
+	&__list
+		transition: $t
+		// overflow-x: auto
+		max-width: 1010px
+		margin-left: auto
+		margin-right: auto
+		&-inner
+			display: flex
+	&__item
+		font-size: 16px
+		line-height: 24px
+		font-weight: 700
+		min-width: 125px
+		padding-bottom: 10px
+		position: relative
+		border-bottom: 4px solid #fff
+		cursor: pointer
+		&:before
+			content: ''
+			position: absolute
+			bottom: -16px
+			left: 0
+			width: 4px
+			height: 16px
+			background-color: #fff
+	&__foot
+		align-items: flex-start
+		margin-top: 85px
+	&__btn-skip
+		max-width: 150px
+		// margin-left: 215px
+		position: absolute
+		left: 50%
+		transform: translateX(-100%)
+		margin-left: -355px
+	&__texts
+		width: 425px
+		margin-left: auto
+	&__text
+		height: 0
+		opacity: 0
+		// transition: .6s opacity
+		&.--current
+			opacity: 1
+			height: auto
+	&__color
+		z-index: -1
+		position: fixed
+		top: 0
+		left: 50%
+		width: 50%
+		bottom: 0
+		// max-width: (2560px / 2)
+		background-color: $blue
+		transform: translateX(-100%)
+	&__bgs
+		opacity: 0
+		transition: $t
+	&__bg
+		z-index: -1
+		position: fixed
+		top: 0
+		width: 50%
+		left: 50%
+		bottom: 0
+		background-color: $black
+		// max-width: (2560px / 2)
+	&.--current
+		.timeline
+			&__bgs
+				opacity: 1
+	
 
-@media screen and (max-width: 1220px)
-	// .timeline
-		
-@media screen and (max-width: 992px)
-	// .timeline
-		
-@media screen and (max-width: 767px)
-	// .timeline
-		
+.timebgs
+	&__list
+		width: 100%
+		height: 100%
+	&__item
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		opacity: 0
+		transition: $t
+		overflow: hidden
+		&:before
+			z-index: 2
+			opacity: 0.4
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background-color: $black
+		picture
+			width: 100%
+			height: 100%
+		img
+			z-index: 1
+			width: 100%
+			height: 100%
+			object-fit: cover
+			transition: 15s
+		&.--current
+			opacity: 1
+			img
+				transition: 15s
+				transform: scale(1.3)
+
+
+
+.timedate
+	display: flex
+	justify-content: center
+	&__number
+		height: 330px
+		overflow: hidden
+	&__inner
+		transition: .6s
+	&__year
+		font-size: 430px
+		width: 300px
+		font-weight: 700
+		line-height: 330px
+		text-align: center
+
+
+@media screen and (max-height: 960px)
+	.timeline
+		&__inner
+			padding-top: 100px
+		&__year
+			font-size: 380px
+		&__btn-skip
+			// margin-left: 200px
+			
+@media screen and (max-height: 865px)
+	.timeline
+		// 
+
+	.timedate
+		&__number
+			height: 230px
+		&__year
+			width: 200px
+			font-size: 300px
+			line-height: 230px
+
+@media screen and (max-height: 770px)
+	.timeline
+		&__date
+			margin-bottom: 40px
+		&__foot
+			margin-top: 40px
+
+@media screen and (max-width: 1100px)
+	.timeline
+		&__list
+			max-width: 630px
+			// over
+		&__btn-skip
+			margin-left: -165px
+			
+@media screen and (max-width: 960px)
+	.timeline
+		&__inner
+			display: flex
+			flex-direction: column
+			padding-top: 30px
+		&__list
+			max-width: 100%
+			margin-left: 150px
+			&-inner
+				padding-bottom: 30px
+				// overflow-x: auto 
+		&__btn-skip
+			margin-left: -165px
+		&__texts
+			display: flex
+			align-items: center
+			justify-content: center
+			position: absolute
+			flex-direction: column
+			height: 50%
+			left: 0
+			right: 0
+			top: 0
+			width: auto
+			padding: 65px 32px 50px
+		&__text
+			line-height: 22px
+		&__foot
+			order: 1
+		&__list
+			order: 2
+			top: 67%
+			left: 32px
+			right: 32px
+			position: absolute
+			transform: translateY(-50%)
+		&__btn-skip
+			max-width: none
+			position: absolute
+			left: 32px
+			right: 32px
+			bottom: 20px
+			margin-left: 0
+			transform: none
+			&.button
+				color: $blue
+				background-color: #fff
+				&:after
+					background-color: $blue
+				&:hover
+					color: #fff
+					border-color: $blue
+					background-color: $blue
+					&:after
+						background-color: $blue
+
+			
+
+			
+		&__color
+			top: 0
+			left: 0
+			right: 0
+			width: 100%
+			height: 50%
+			transform: none
+
+		&__bg
+			left: 0
+			right: 0
+			width: 100%
+			height: 50%
+			bottom: 0
+			top: auto
+			
+	.timedate
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		&__number
+			height: 130px
+		&__year
+			font-size: 127px
+			line-height: 127px
+			width: 86px
+
+
+
+@media screen and (max-width: 450px)
+	.timeline__text
+		font-size: 14px
+		line-height: 20px

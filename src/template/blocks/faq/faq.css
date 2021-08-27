@@ -1,0 +1,137 @@
+.faq {
+  padding-top: 140px;
+  margin-top: -80px;
+  width: 100%;
+  max-width: 855px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.faq__title {
+  margin-bottom: 45px;
+}
+.faq__item {
+  margin-bottom: 16px;
+}
+.faq__item:last-of-type {
+  margin-bottom: 0;
+}
+
+.f-item {
+  border: 1px solid rgba(188, 200, 207, 0.5);
+}
+.f-item.--open .f-item__name {
+  color: #1A1B1F;
+}
+.f-item.--open .f-item__icon:after {
+  transform: rotate(180deg);
+}
+.f-item.--open .f-item__body {
+  max-height: 100%;
+  padding-bottom: 32px;
+  margin-top: -10px;
+}
+.f-item__head {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 24px 32px;
+}
+.f-item__name {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #1E468A;
+  width: calc(100% - 40px);
+  padding-right: 30px;
+  transition: 0.3s;
+}
+.f-item__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 40px;
+  height: 40px;
+}
+.f-item__icon:before, .f-item__icon:after {
+  content: "";
+  width: 40px;
+  height: 2px;
+  transition: 0.3s;
+  background-color: #1E468A;
+}
+.f-item__icon:after {
+  transform: rotate(90deg);
+  margin-top: -2px;
+}
+.f-item__body {
+  padding: 0 32px;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s, margin-top 0.3s;
+}
+.f-item__text {
+  line-height: 24px;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 1500px) {
+  .faq {
+    max-width: 630px;
+    margin-left: auto;
+    position: relative;
+    left: 30px;
+  }
+  .faq__title {
+    margin-bottom: 30px;
+  }
+
+  .f-item__name {
+    font-size: 18px;
+    line-height: 25px;
+    width: calc(100% - 30px);
+  }
+  .f-item__icon {
+    width: 30px;
+    height: 30px;
+  }
+  .f-item__icon:before, .f-item__icon:after {
+    width: 30px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .faq {
+    left: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .faq__title {
+    font-size: 24px;
+    line-height: 29px;
+    padding-right: 10px;
+  }
+
+  .f-item__head {
+    padding: 13px;
+  }
+  .f-item__name {
+    font-size: 16px;
+    line-height: 23px;
+  }
+  .f-item__icon {
+    width: 24px;
+    height: 24px;
+  }
+  .f-item__icon:before, .f-item__icon:after {
+    width: 24px;
+  }
+  .f-item__body {
+    padding: 0 13px;
+  }
+  .f-item.--open .f-item__body {
+    font-size: 16px;
+    line-height: 23px;
+    margin-top: 0;
+    padding-bottom: 20px;
+  }
+}

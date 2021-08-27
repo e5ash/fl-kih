@@ -9,7 +9,6 @@ html(lang="ru")
 	body
 		.wrap
 			link(rel="stylesheet" href="template/css/style.css" + version)
-			link(rel="stylesheet" href="template/css/responsive.css" + version)
 			link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
 
 			include ../../blocks/header/header
@@ -49,6 +48,9 @@ html(lang="ru")
 				+modal('consult', 'Получить консультацию')
 				+modal('feedback', 'Связаться с нами')
 				+modal('question', 'Задать вопрос', 'Вопрос')
+
+				+style('modal', 'blocks')
+
 			script(src="https://unpkg.com/imask")
 			script(src="https://unpkg.com/swiper/swiper-bundle.min.js")
 			+script('field', 'components')

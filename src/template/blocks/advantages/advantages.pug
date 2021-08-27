@@ -1,16 +1,17 @@
 include ../../pug/vars
 
-.advantages.nav-item#advantages(class=!solutionReestr ? '--pt' : null)
+.advantages(class=!solutionReestr ? '--pt' : null)
 	.case
 		.advantages__pluses.pluses
 			picture
 				img(src="uploads/pluses-gray.svg" alt="")
 		.advantages__title.h2 Выгоды #[br]использования
 		.advantages__list.row
-			each item in advantages 
-				.advantages__item
-					.advantages__icon
-						picture
-							img(src='uploads/' + item[1] alt="")
-					.advantages__name!=item[0]
+			if advantages
+				each item in advantages 
+					.advantages__item
+						.advantages__icon
+							picture
+								img(src='uploads/' + item[1] alt="")
+						.advantages__name!=item[0]
 	+style('advantages', 'blocks')

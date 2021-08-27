@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 	if (sideNav && sideNavItem) {
 		sideNavItem.forEach((item)=>{
 			item.link = sideNav.querySelector('a[href*="' + item.id + '"]');
-			
+				
 			item.section = item.closest('.section');
 			item.inner = item.section.inner;
 			item.inner.addEventListener('scroll', ()=>{
@@ -71,7 +71,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
 			item.link.addEventListener('click', (event)=>{
 				event.preventDefault();
 
+				sideNavItem.forEach((i)=>{
+					i.section.classList.remove('--current');
+				});
+
+				item.section.classList.add('--current');
 				let section = document.querySelector('.section.--current');
+				document.body.sscroll.currentSection = section;
 
 				if (section == item.section) {
 					item.scrollIntoView({
@@ -116,7 +122,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 				if (i == 0) {
 					sideNavIsShow = false;
 				}
-				console.log(item.section.offsetTop, item.offsetHeight, window.pageYOffset)
+				// console.log(item.section.offsetTop, item.offsetHeight, window.pageYOffset)
 				if (window.pageYOffset >= item.section.offsetTop && window.pageYOffset <= (item.section.offsetTop + item.section.offsetHeight) && item.section.inner.scrollTop >= item.offsetTop && item.section.inner.scrollTop <= (item.offsetTop + item.offsetHeight)) {
 					item.link.classList.add(sideNavClassCurrent);
 					toggleCurrent(item.link);
@@ -131,4 +137,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
 			});
 		}
 	}
+
+
+	let introPluses = document.querySelector('.intro__pluses');
+	if (introPluses) {
+		let ow = document.body.offsetWidth; 
+		if (ow < 768) {
+			introPluses.style.marginRight = - ow % 4 + 'px';
+		} else {
+			introPluses.removeAttribute('style');
+		}
+	}
+
 });

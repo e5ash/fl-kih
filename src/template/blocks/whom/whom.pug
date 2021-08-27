@@ -6,14 +6,16 @@ include ../../pug/vars
 		if whomText
 			.whom__desc!= whomText
 		.whom__list
-			each item in whom
-				.whom__item
-					.whom__icon-wrap
-						.whom__icon
-							picture
-								img(src='uploads/' + item[1] alt="")
-						.whom__name!=item[0]
-						.whom__arrow(class=item[3] ? '--back' : null) #[div]
-					.whom__content
-						.whom__text.t1!=item[2]
+			if whom
+				each item in whom
+					.whom__item
+						.whom__icon-wrap
+							.whom__icon
+								picture
+									img(src='uploads/' + item[1] alt="")
+							.whom__name!=item[0]
+							.whom__arrow(class=item[3] ? '--back' : null) #[div]
+						.whom__content
+							.whom__text.t1!=item[2]
+	+style('whom', 'blocks')
 	+script('whom', 'blocks')

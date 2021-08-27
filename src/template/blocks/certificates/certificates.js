@@ -13,6 +13,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
 			navigation: {
 				prevEl: certificates.controlPrev,
 				nextEl: certificates.controlNext
+			},
+			breakpoints: {
+				0: {
+					slidesPerView: 2,
+					spaceBetween: 16,
+				},
+				560: {
+					slidesPerView: 3,
+					spaceBetween: 16,
+				},
+				950: {
+					slidesPerView: 4,
+				}
 			}
 		})
 	}

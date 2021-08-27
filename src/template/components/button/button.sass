@@ -41,6 +41,16 @@
 			background-color: #fff
 			&:after
 				background-color: $blue
+	&.--b-blue
+		color: $blue
+		border: 1px solid $blue
+		&:after
+			background-color: $blue
+		&:hover
+			color: #fff
+			background-color: $blue
+			&:after
+				background-color: #fff
 	&.--bg-transparent
 		background-color: transparent
 	&.--bg-white
@@ -84,3 +94,17 @@
 			right: 16px
 			bottom: 8px
 
+
+@media screen and (max-width: 1023px)
+	.button
+		&.--lg, &.--md
+			font-size: 12px
+			min-height: 56px
+			&:after
+				bottom: 6px
+
+@media screen and (max-width: 420px)
+	.button
+		&.--lg, &.--md
+			padding-left: 10px
+			padding-right: 10px

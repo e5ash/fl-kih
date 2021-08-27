@@ -1,13 +1,124 @@
 @import ../../sass/vars
 
-// .reviews
+.reviews
+	padding-top: 140px
+	width: 100%
+	max-width: 855px
+	margin-left: auto
+	margin-right: auto
+	&__head
+		align-items: center
+		margin-bottom: 32px
+	&__controls
+		margin-left: auto
+		margin-right: -123px
+	&__body
+		overflow: hidden
+	&__item
+		padding-left: 40px
+	&__quote
+		margin-bottom: 18px
+		position: relative
+		&:before
+			content: '<'
+			position: absolute
+			left: -40px
+			top: 5px
+			font-size: 32px
+			line-height: 32px
+			font-weight: 500
+	&__text
+		p
+			display: inline
+			opacity: 0.7
+		&:after
+			content: '/>'
+			display: inline
+			font-size: 32px
+			line-height: 24px
+			vertical-align: bottom
+			margin-left: 22px
+			position: relative
+			top: 10px
+			font-weight: 500
 
-@media screen and (max-width: 1220px)
-	// .reviews
+	&__author
+		margin-top: 56px
+
+
+.r-author
+	display: flex
+	&__logo
+		width: 43px
+		padding-top: 2px
+	&__text
+		width: 100%
+		max-width: 540px
+		padding-left: 40px
+	&__name
+		font-size: 16px
+		line-height: 24px
+		font-weight: 700
+		margin-bottom: 6px
+	&__desc
+		opacity: 0.5
+		font-size: 12px
+		line-height: 16px
 		
-@media screen and (max-width: 992px)
-	// .reviews
-		
+
+@media screen and (max-width: 1500px)
+	.reviews
+		max-width: 630px
+		margin-left: auto
+		margin-right: auto
+		position: relative
+		left: 30px
+		&__controls
+			margin-right: 0
+		&__author
+			margin-top: 30px
+
+@media screen and (max-width: 1023px)
+	.reviews
+		left: 0
+		padding-top: 80px
+
 @media screen and (max-width: 767px)
-	// .reviews
-		
+	.reviews
+		&__head
+			align-items: center
+		&__title
+			font-size: 24px
+			line-height: 29px
+			padding-right: 10px
+		&__item
+			padding-left: 23px
+		&__quote
+			font-size: 18px
+			line-height: 23px
+			&:before
+				font-size: 16px
+				left: -23px
+				top: -4px
+		&__text
+			&:after
+				font-size: 16px
+				line-height: 16px
+				top: -4px
+				margin-left: 10px
+		&__author
+			margin-top: 20px
+	.r-author
+		&__text
+			padding-left: 14px
+
+@media screen and (max-width: 400px)
+	.reviews
+		&__name
+			width: 100%
+			text-align: left
+			margin-bottom: 5px
+		&__head
+			width: 100%
+			flex-direction: column
+			align-items: flex-start

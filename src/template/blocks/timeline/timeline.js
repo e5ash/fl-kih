@@ -64,7 +64,8 @@ class Timeline {
 
 
 	getCurrent() {
-		return localStorage.getItem('timeline-current') ? localStorage.getItem('timeline-current') : 0;
+		return 0;
+		// return localStorage.getItem('timeline-current') ? localStorage.getItem('timeline-current') : 0;
 	}
 
 	removeCurrent() {

@@ -7,7 +7,6 @@ if (togs) {
 
 		tog.head.addEventListener('click', ()=>{
 			tog.classList.toggle(togClassOpen);
-			console.log(tog.body.scrollHeight);
 			if (tog.classList.contains(togClassOpen)) {
 				tog.body.style.height = tog.body.scrollHeight + 'px';
 			} else {

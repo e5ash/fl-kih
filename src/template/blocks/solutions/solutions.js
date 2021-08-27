@@ -6,7 +6,15 @@ let solutions = {
 if (solutions.wrap && solutions.timeline) {
 	solutions.timeline.slider = new Swiper(solutions.timeline, {
 		slidesPerView: 6,
-		spaceBetween: 40
+		spaceBetween: 40,
+		breakpoints: {
+			0: {
+				slidesPerView: 'auto',
+			},
+			767: {
+				slidesPerView: 6,
+			}
+		}
 	});
 
 	solutions.wrap.slider = new Swiper(solutions.wrap, {
