@@ -19,12 +19,13 @@ header.header
 					a.nav__item(href="") Контакты
 			.header__phone #[a(href="tel:+78000000000") 8-800-000-00-00]
 			.header__btn-consult.button(data-src="#modal-consult" data-popup="") Получить консультацию
-			
-.sidenav
-	a.sidenav__item(href="#solution") Выгоды использования
-	a.sidenav__item(href="#whom") Как это работает
-	a.sidenav__item(href="#functionallity") Функциональные возможности
-	a.sidenav__item(href="#reviews") Отзывы клиентов
-	a.sidenav__item(href="#faq") Частые вопросы
+		
+if sidenav	
+	.sidenav
+		a.sidenav__item(href="#solution") Выгоды использования
+		a.sidenav__item(href="#whom") Как это работает
+		a.sidenav__item(href="#functionallity") Функциональные возможности
+		a.sidenav__item(href="#reviews") Отзывы клиентов
+		a.sidenav__item(href="#faq") Частые вопросы
 
 +style('header', 'blocks')

@@ -139,14 +139,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
 	}
 
 
-	let introPluses = document.querySelector('.intro__pluses');
-	if (introPluses) {
-		let ow = document.body.offsetWidth; 
-		if (ow < 768) {
-			introPluses.style.marginRight = - ow % 4 + 'px';
-		} else {
-			introPluses.removeAttribute('style');
-		}
-	}
+	// let introPluses = document.querySelector('.intro__pluses');
+	// if (introPluses) {
+	// 	let ow = document.body.offsetWidth; 
+	// 	if (ow < 768) {
+	// 		introPluses.style.marginRight = - ow / 2 % 20 - ow / 20 + 'px';
+	// 	} else {
+	// 		introPluses.removeAttribute('style');
+	// 	}
+	// }
 
 });
